@@ -25,6 +25,7 @@ def run(event, context):
         stn_ids = json.load(json_file)["stations"]
 
     for stn_id in stn_ids:
+        # Note, sorting applies to wx_retro,
         urls = {
             "nfdrs_forecast": f"https://famprod.nwcg.gov/wims/xsql/nfdrs.xsql?stn={stn_id}&type=F&priority=&fmodel=16Y&sort=asc&ndays=7",
             "nfdrs_retro": f"https://famprod.nwcg.gov/wims/xsql/nfdrs.xsql?stn={stn_id}&type=N&priority=&fmodel=16Y&ndays=1&sort=asc",
