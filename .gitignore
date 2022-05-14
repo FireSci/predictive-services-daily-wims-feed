@@ -1,0 +1,6 @@
+.serverless
+*.pyc
+*.pyo
+.venv
+.mypy_cache
+.DS_Store

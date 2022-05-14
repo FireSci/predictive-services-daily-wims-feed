@@ -1,0 +1,64 @@
+org: jcla490
+app: ps-daily-wims-feed
+service: ps-daily-wims-feed
+
+frameworkVersion: '3'
+
+package:
+  patterns:
+    - '!.venv'
+    - '!.mypy_cache'
+    - '!parse_stations'
+    - '!notes'
+
+provider:
+  name: aws
+  region: us-west-2
+  runtime: python3.8
+  deploymentBucket:
+    blockPublicAccess: true
+    maxPreviousDeploymentArtifacts: 3
+  iam:
+    role:
+      name: PSDailyWIMSLambdaRole
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - 's3:PutObject'
+            - 's3:GetObject'
+          Resource: 
+            - 'arn:aws:s3:::predictive-services-open-data-us-west-2/*'
+            - 'arn:aws:s3:::predictive-services-open-data-us-west-2'
+
+functions:
+  cronHandler:
+    # Handler is where our code lives
+    handler: handler.run
+    events:
+      # Invoke Lambda every night at 0400Z
+      - schedule: cron(0 4 * * ? *)
+
+resources:
+  Resources:
+    PublicDataBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: predictive-services-open-data-us-west-2
+        AccessControl: PublicRead
+        # WebsiteConfiguration:
+        #   IndexDocument: index.html
+        VersioningConfiguration:
+          Status: Enabled
+    PublicDataBucketPolicy:
+      Type: 'AWS::S3::BucketPolicy'
+      Properties:
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadForGetBucketObjects
+              Effect: Allow
+              Principal: '*'
+              Action:
+                - 's3:GetObject'
+              Resource: arn:aws:s3:::predictive-services-open-data-us-west-2/*
+        Bucket:
+          Ref: PublicDataBucket
