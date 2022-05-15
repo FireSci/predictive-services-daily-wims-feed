@@ -45,8 +45,8 @@ resources:
       Properties:
         BucketName: predictive-services-open-data-us-west-2
         AccessControl: PublicRead
-        # WebsiteConfiguration:
-        #   IndexDocument: index.html
+        WebsiteConfiguration:
+          IndexDocument: ndfd_predserv_fcst.txt
         VersioningConfiguration:
           Status: Enabled
     PublicDataBucketPolicy:
