@@ -16,12 +16,14 @@ OUTPUT_PATH = "ndfd_predserv_fcst.txt"
 
 
 def get_station_data(urls: T.Dict[str, str]) -> T.Dict[str, T.Dict]:
-    """Given a list of URLs for a particular station, returns data from WIMS"""
+    """Given a list of URLs for a particular station, returns data from WIMS.
+    This should also return values for all endpoints even if its just None"""
     stn_data: T.Dict = {}
     for url in urls.values():
         response = requests.get(url)
         dict_data = xmltodict.parse(response.content)
-        # Since we call nfdrs endpoint twice
+        # Since we call nfdrs endpoint twice, this works because of order of urls
+        # but will need to change if async implemented
         if "nfdrs" in stn_data and "nfdrs" in dict_data:
             dict_data["nfdrs_retro"] = dict_data.pop("nfdrs")
         stn_data = {**stn_data, **dict_data}
@@ -29,7 +31,9 @@ def get_station_data(urls: T.Dict[str, str]) -> T.Dict[str, T.Dict]:
 
 
 def get_stn_headers(stn_data) -> T.List[str]:
-    """Helper func to extract headers from first day of any endpoint result"""
+    """Helper func to extract headers from first day of any endpoint result.
+    Returns an empty list if we can't get any headers"""
+    headers = []
     for k in stn_data:
         try:
             s = stn_data["nfdrs"]["row"][0]
@@ -50,15 +54,15 @@ def get_stn_headers(stn_data) -> T.List[str]:
 
 
 def process_data(stn_data):
+    """Process all of the required data for a station"""
     out_stn = {}
 
     # Get headers (stn name, stn id, etc.)
     out_stn["headers"] = get_stn_headers(stn_data)
 
-    try:
-        pass
-    except Exception as e:
-        logger.info(e)
+    # Weather forecast data
+    pfcst: T.List[T.Dict] = stn_data["pfcst"]["row"]
+
     return out_stn
 
 
@@ -70,6 +74,8 @@ def run(event, context):
     # Load station data into memory
     with open("station_list.json") as json_file:
         stns: T.List[T.Dict[str, T.Any]] = json.load(json_file)
+
+    error_stns = []
 
     for stn in stns:
         # Build request urls
@@ -87,10 +93,19 @@ def run(event, context):
         # Make requests
         stn_data = get_station_data(urls)
 
+        # Checks if one endpoint failed. If so, log it and try next station
+        # We enforce that a station has data for all urls
+        if None in stn_data.values():
+            error_stns.append(stn["STNID"])
+            logger.info(
+                f"Failed to get {', '.join([k for k in stn_data if stn_data[k] == None])} for {stn['STNID']}"
+            )
+            continue
+
         # Process only the data we need
         stn_data = process_data(stn_data)
 
-        # Write labels, this feels hacky
+        # Write labels
         stn_data["labels"] = {
             "Fcst Dy": [
                 "Max RH (%)",
@@ -108,12 +123,6 @@ def run(event, context):
         }
         print(stn_data)
 
-        #    {
-        #         "STNID": 20207,
-        #         "RS": 13,
-        #         "MP": 2,
-        #         "MSGC": "16Y1P"
-        #     },
         # Format station data
 
     # Write to txt file with tabs and new lines where needed

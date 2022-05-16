@@ -4,3 +4,6 @@
 .venv
 .mypy_cache
 .DS_Store
+__pycache__
+serverless_sdk
+s_cronHandler.py
