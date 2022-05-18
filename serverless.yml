@@ -33,7 +33,7 @@ provider:
 functions:
   cronHandler:
     # Handler is where our code lives
-    handler: handler.run
+    handler: wims_feed.handler.run
     events:
       # Invoke Lambda every night at 0400Z
       - schedule: cron(0 4 * * ? *)
