@@ -21,6 +21,6 @@ def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
         # Since we call nfdrs endpoint twice, this works because of order of
         # urls but will need to change if async implemented
         if "nfdrs" in stn_data and "nfdrs" in dict_data:
-            dict_data["nfdrs_retro"] = dict_data.pop("nfdrs")
+            dict_data["nfdrs_obs"] = dict_data.pop("nfdrs")
         stn_data = {**stn_data, **dict_data}
     return stn_data

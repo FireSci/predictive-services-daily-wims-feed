@@ -35,8 +35,8 @@ functions:
     # Handler is where our code lives
     handler: wims_feed.handler.run
     events:
-      # Invoke Lambda every night at 0400Z
-      - schedule: cron(0 4 * * ? *)
+      # Invoke Lambda every day at 2200Z
+      - schedule: cron(0 22 * * ? *)
 
 resources:
   Resources:

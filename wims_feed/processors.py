@@ -1,31 +1,50 @@
 import typing as T
-from datetime import datetime
-from pathlib import Path
-from tempfile import TemporaryDirectory
+from datetime import date, datetime, timedelta
 
 import boto3
 
+from wims_feed.constants import DATES
+from wims_feed.helpers import dict_to_list, enumerate_dates
 from wims_feed.settings import Settings
 
 settings = Settings()
 S3 = boto3.client("s3")
 
 
-def process_data(stn_data: T.Dict[str, T.Dict], rs: int, mp: int, msgc: str):
+def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     """Process all of the required data for a station"""
-    out_stn = {}
+    # Init dict of nine days
+    dates: T.List[date] = enumerate_dates(
+        (datetime.utcnow() - timedelta(days=1)).date(),
+        (datetime.utcnow() + timedelta(days=7)).date(),
+    )
+    # This will be our final station object
+    out_stn: T.Dict[str, T.List[T.Any]] = {
+        d.strftime("%m/%d"): [] for d in dates
+    }
 
-    # Station headers (stn name, stn id, etc.)
-    out_stn["headers"] = get_stn_headers(stn_data)
+    # Make sure data from endpoints are list, not dict. Happens when endpoint
+    # response has only *one* ob/fcst
+    stn_data = dict_to_list(stn_data)
 
     ###########################################################################
     #  Weather forecast processing                                            #
     ###########################################################################
-    pfcst: T.List[T.Dict] = stn_data["pfcst"]["row"]
-    # TODO: error handling if not len 7
-    assert len(pfcst) == 7
+    pfcst = stn_data["pfcst"]["row"]
+
+    # Check and fill missing dates with -99
+    if len(pfcst) != 7:
+        missing_dts: T.List[str] = find_missing_dates(pfcst, "pfcst")
+        for d in missing_dts:
+            out_stn[d] = [
+                "-99",
+                "-99",
+                "-99",
+                "-99",
+                "-99",
+            ]
+    # Fill found dates
     for day in pfcst:
-        # Remove year from date
         out_stn[day["fcst_dt"][:-5]] = [
             day["rh_max"],
             day["temp_min"],
@@ -38,9 +57,20 @@ def process_data(stn_data: T.Dict[str, T.Dict], rs: int, mp: int, msgc: str):
     # Weather obs processing                                                  #
     ###########################################################################
     obs: T.List[T.Dict] = stn_data["obs"]["row"]
-    obs = remove_non_rs_obs(obs, rs)
-    # TODO: error handling if not len 2
-    assert len(obs) == 2
+
+    # Check and fill missing dates with -99
+    if len(obs) != 2:
+        missing_dts = find_missing_dates(obs, "obs")
+        for d in missing_dts:
+            out_stn[d] = [
+                "-99",
+                "-99",
+                "-99",
+                "-99",
+                "-99",
+            ]
+
+    # Fill found dates
     for day in obs:
         out_stn[day["obs_dt"][:-5]] = [
             day["rh_max"],
@@ -53,8 +83,52 @@ def process_data(stn_data: T.Dict[str, T.Dict], rs: int, mp: int, msgc: str):
     ###########################################################################
     # NFDRS obs processing                                                    #
     ###########################################################################
-    # nfdrs_obs: T.List[T.Dict] = stn_data["nfdrs_retro"]["row"]
-    # assert len(obs) == 2
+    nfdrs_obs: T.List[T.Dict] = stn_data["nfdrs_obs"]["row"]
+
+    # Check and fill missing dates with -99
+    if len(nfdrs_obs) != 2:
+        missing_dts = find_missing_dates(nfdrs_obs, "nfdrs_obs")
+        for d in missing_dts:
+            out_stn[d] = ["-99", "-99", "-99", "-99", "-99", "-99"]
+
+    # Fill found dates
+    for day in nfdrs_obs:
+        out_stn[day["nfdr_dt"][:-5]].extend(
+            [
+                day["bi"],
+                day["ec"],
+                day["ic"],
+                day["ten_hr"],
+                day["hu_hr"],
+                day["th_hr"],
+            ]
+        )
+
+    ###########################################################################
+    # NFDRS forecast processing                                               #
+    ###########################################################################
+    nfdrs_fcst: T.List[T.Dict] = stn_data["nfdrs"]["row"]
+
+    # Check and fill missing dates with -99
+    if len(nfdrs_fcst) != 7:
+        missing_dts = find_missing_dates(nfdrs_fcst, "nfdrs")
+        for d in missing_dts:
+            out_stn[d] = ["-99", "-99", "-99", "-99", "-99", "-99"]
+
+    for day in nfdrs_fcst:
+        out_stn[day["nfdr_dt"][:-5]].extend(
+            [
+                day["bi"],
+                day["ec"],
+                day["ic"],
+                day["ten_hr"],
+                day["hu_hr"],
+                day["th_hr"],
+            ]
+        )
+
+    # Write station headers (stn name, stn id, etc.)
+    out_stn["headers"] = get_stn_headers(stn_data)
 
     return out_stn
 
@@ -65,7 +139,7 @@ def get_stn_headers(stn_data) -> T.List[str]:
     headers = []
     for k in stn_data:
         try:
-            s = stn_data["nfdrs"]["row"][0]
+            s = stn_data[k]["row"][0]
             today_dt = datetime.utcnow()
             headers = [
                 f"*{s['sta_nm']}",
@@ -82,7 +156,24 @@ def get_stn_headers(stn_data) -> T.List[str]:
     return headers
 
 
-def remove_non_rs_obs(obs: T.List[T.Dict], rs: int) -> T.List[T.Dict]:
-    """Itty bitty helper for removing obs that don't match our regularly
-    scheduled time"""
-    return [ob for ob in obs if ob["obs_tm"] == str(rs)]
+def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
+    "Find the missing dates in the WIMS output. Spookyyyy"
+    # Get a date range, inclusive ends
+    dates = enumerate_dates(DATES[d_type]["s"], DATES[d_type]["e"])
+
+    # Format to be like WIMS output
+    date_strs = set([d.strftime("%m/%d") for d in dates])
+
+    # Figure out which date key we need
+    if d_type in ["nfdrs", "nfdrs_obs"]:
+        data_date = "nfdr_dt"
+    elif d_type == "obs":
+        data_date = "obs_dt"
+    else:
+        data_date = "fcst_dt"
+
+    # Get the dates from WIMS output
+    wims_dates = set([day[data_date][:-5] for day in data])
+
+    # Get the set difference
+    return list(date_strs.difference(wims_dates))
