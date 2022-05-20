@@ -36,22 +36,26 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     if len(pfcst) != 7:
         missing_dts: T.List[str] = find_missing_dates(pfcst, "pfcst")
         for d in missing_dts:
-            out_stn[d] = [
-                "-99",
-                "-99",
-                "-99",
-                "-99",
-                "-99",
-            ]
+            out_stn[d].extend(
+                [
+                    "-99",
+                    "-99",
+                    "-99",
+                    "-99",
+                    "-99",
+                ]
+            )
     # Fill found dates
     for day in pfcst:
-        out_stn[day["fcst_dt"][:-5]] = [
-            day["rh_max"],
-            day["temp_min"],
-            day["rh_min"],
-            day["temp_max"],
-            day["wind_sp"],
-        ]
+        out_stn[day["fcst_dt"][:-5]].extend(
+            [
+                day["rh_max"],
+                day["temp_min"],
+                day["rh_min"],
+                day["temp_max"],
+                day["wind_sp"],
+            ]
+        )
 
     ###########################################################################
     # Weather obs processing                                                  #
@@ -62,23 +66,27 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     if len(obs) != 2:
         missing_dts = find_missing_dates(obs, "obs")
         for d in missing_dts:
-            out_stn[d] = [
-                "-99",
-                "-99",
-                "-99",
-                "-99",
-                "-99",
-            ]
+            out_stn[d].extend(
+                [
+                    "-99",
+                    "-99",
+                    "-99",
+                    "-99",
+                    "-99",
+                ]
+            )
 
     # Fill found dates
     for day in obs:
-        out_stn[day["obs_dt"][:-5]] = [
-            day["rh_max"],
-            day["temp_min"],
-            day["rh_min"],
-            day["temp_max"],
-            day["wind_sp"],
-        ]
+        out_stn[day["obs_dt"][:-5]].extend(
+            [
+                day["rh_max"],
+                day["temp_min"],
+                day["rh_min"],
+                day["temp_max"],
+                day["wind_sp"],
+            ]
+        )
 
     ###########################################################################
     # NFDRS obs processing                                                    #
@@ -89,7 +97,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     if len(nfdrs_obs) != 2:
         missing_dts = find_missing_dates(nfdrs_obs, "nfdrs_obs")
         for d in missing_dts:
-            out_stn[d] = ["-99", "-99", "-99", "-99", "-99", "-99"]
+            out_stn[d].extend(["-99", "-99", "-99", "-99", "-99", "-99"])
 
     # Fill found dates
     for day in nfdrs_obs:
@@ -113,7 +121,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     if len(nfdrs_fcst) != 7:
         missing_dts = find_missing_dates(nfdrs_fcst, "nfdrs")
         for d in missing_dts:
-            out_stn[d] = ["-99", "-99", "-99", "-99", "-99", "-99"]
+            out_stn[d].extend(["-99", "-99", "-99", "-99", "-99", "-99"])
 
     for day in nfdrs_fcst:
         out_stn[day["nfdr_dt"][:-5]].extend(
@@ -159,8 +167,17 @@ def get_stn_headers(stn_data) -> T.List[str]:
 def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
     "Find the missing dates in the WIMS output. Spookyyyy"
     # Get a date range, inclusive ends
-    dates = enumerate_dates(DATES[d_type]["s"], DATES[d_type]["e"])
-
+    # I hate this but the WIMS nfdrs excepts inconsistent dates
+    if d_type in ["nfdrs", "pfcst"]:
+        dates = enumerate_dates(
+            (datetime.utcnow() + timedelta(days=1)),
+            (datetime.utcnow() + timedelta(days=7)),
+        )
+    else:
+        dates = enumerate_dates(
+            (datetime.utcnow() - timedelta(days=1)),
+            (datetime.utcnow()),
+        )
     # Format to be like WIMS output
     date_strs = set([d.strftime("%m/%d") for d in dates])
 
@@ -174,6 +191,5 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
 
     # Get the dates from WIMS output
     wims_dates = set([day[data_date][:-5] for day in data])
-
     # Get the set difference
     return list(date_strs.difference(wims_dates))

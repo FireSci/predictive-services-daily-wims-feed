@@ -28,7 +28,6 @@ def run(event, context):
 
     final_data = []
     for stn in stns:
-
         # Build request urls
         urls = [
             # Gets next seven day NFDRS16 forecast
@@ -38,7 +37,7 @@ def run(event, context):
             # Gets next seven day wx forecast
             f"{BASE}/pfcst.xsql?stn={stn['STNID']}&type=F&start={DATES['pfcst']['s'].strftime('%d-%b-%y')}&end={DATES['pfcst']['e'].strftime('%d-%b-%y')}",
             # Gets past and Day 0 wx obs
-            f"{BASE}/obs.xsql?stn={stn['STNID']}&start={DATES['obs']['s'].strftime('%d-%b-%y')}&end={DATES['obs']['s'].strftime('%d-%b-%y')}&time={stn['RS']}",
+            f"{BASE}/obs.xsql?stn={stn['STNID']}&start={DATES['obs']['s'].strftime('%d-%b-%y')}&end={DATES['obs']['e'].strftime('%d-%b-%y')}&time={stn['RS']}",
         ]
 
         # Make requests to WIMS endpoints
@@ -46,15 +45,15 @@ def run(event, context):
 
         # Process only the data we need
         processed_data = process_data(raw_data, stn)
-        with open("processed_data.json", "w") as f:
-            json.dump(processed_data, f)
         # Add to stn list
         final_data.append(processed_data)
 
     # Write formatted data to txt file
+    with open(f"/tmp/ndfd_predserv_fcst.json", "w") as f:
+        json.dump(final_data, f)
 
     # Send ittttt
-    with open(f"/tmp/{settings.output_path}", "rb") as f:
-        S3.upload_fileobj(f, settings.bucket_name, settings.output_path)
+    with open(f"/tmp/ndfd_predserv_fcst.json", "rb") as f:
+        S3.upload_fileobj(f, settings.bucket_name, "ndfd_predserv_fcst.json")
 
     return {"message": "WIMS data successfully written"}

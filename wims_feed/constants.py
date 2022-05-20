@@ -19,7 +19,7 @@ STN_LABELS = {
 
 DATES = {
     "nfdrs": {
-        "s": (datetime.utcnow() + timedelta(days=1)),
+        "s": datetime.utcnow(),
         "e": (datetime.utcnow() + timedelta(days=7)),
     },
     "nfdrs_obs": {
