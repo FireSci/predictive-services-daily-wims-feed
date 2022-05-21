@@ -6,7 +6,7 @@ from pathlib import Path
 
 import boto3
 
-from wims_feed.constants import STN_LABELS, DATES
+from wims_feed.constants import DATES
 from wims_feed.io import get_station_list, get_station_data
 from wims_feed.processors import process_data
 from wims_feed.settings import Settings
@@ -52,6 +52,8 @@ def run(event, context):
     with open(f"/tmp/ndfd_predserv_fcst.json", "w") as f:
         json.dump(final_data, f)
 
+    # Make sure to write row headers too!
+    # STN_LABELS
     # Send ittttt
     with open(f"/tmp/ndfd_predserv_fcst.json", "rb") as f:
         S3.upload_fileobj(f, settings.bucket_name, "ndfd_predserv_fcst.json")
