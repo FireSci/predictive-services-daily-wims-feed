@@ -10,8 +10,8 @@ python = "^3.8"
 boto3 = "^1.23.0"
 requests = "^2.27.1"
 xmltodict = "^0.13.0"
-types-requests = "^2.27.25"
 pydantic = "^1.9.0"
+types-requests = "^2.27.27"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"

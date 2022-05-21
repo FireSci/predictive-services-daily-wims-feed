@@ -1,7 +1,7 @@
 import json
-import requests
 import typing as T
 
+import requests  # type: ignore
 import xmltodict
 
 

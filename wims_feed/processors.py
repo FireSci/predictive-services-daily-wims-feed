@@ -3,7 +3,6 @@ from datetime import date, datetime, timedelta
 
 import boto3
 
-from wims_feed.constants import DATES
 from wims_feed.helpers import dict_to_list, enumerate_dates
 from wims_feed.settings import Settings
 

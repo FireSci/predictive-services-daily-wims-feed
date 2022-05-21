@@ -26,7 +26,7 @@ provider:
           Action:
             - 's3:PutObject'
             - 's3:GetObject'
-          Resource: 
+          Resource:
             - 'arn:aws:s3:::predictive-services-open-data-us-west-2/*'
             - 'arn:aws:s3:::predictive-services-open-data-us-west-2'
 
