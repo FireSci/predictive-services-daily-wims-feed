@@ -1,8 +1,13 @@
 import json
 import typing as T
 
+import boto3
 import requests  # type: ignore
 import xmltodict
+
+from wims_feed.settings import Settings
+
+settings = Settings()
 
 
 def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
@@ -24,3 +29,21 @@ def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
             dict_data["nfdrs_obs"] = dict_data.pop("nfdrs")
         stn_data = {**stn_data, **dict_data}
     return stn_data
+
+
+def sync_to_s3(file_path: str) -> T.Dict[str, str]:
+    try:
+        S3 = boto3.client("s3")
+        S3.upload_fileobj(
+            file_path, settings.bucket_name, settings.output_path
+        )
+        msg = {
+            "status": "success",
+            "desc": f"{settings.output_path} synced successfully!",
+        }
+    except Exception as e:
+        msg = {
+            "status": "failure",
+            "desc": str(e),
+        }
+    return msg

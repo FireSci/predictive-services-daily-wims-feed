@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ps-daily-wims-feed"
 version = "0.1.0"
-description = ""
+description = "WIMS daily ingest pipeline for Predictive Services"
 authors = ["Josh Clark <josh@firesci.io>"]
 license = "MIT"
 

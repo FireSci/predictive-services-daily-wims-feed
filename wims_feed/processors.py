@@ -3,6 +3,7 @@ from datetime import date, datetime, timedelta
 
 import boto3
 
+from wims_feed.constants import STN_LABELS
 from wims_feed.helpers import dict_to_list, enumerate_dates
 from wims_feed.settings import Settings
 
@@ -15,7 +16,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     # Init dict of nine days
     dates: T.List[date] = enumerate_dates(
         (datetime.utcnow() - timedelta(days=1)).date(),
-        (datetime.utcnow() + timedelta(days=7)).date(),
+        (datetime.utcnow() + timedelta(days=9)).date(),
     )
     # This will be our final station object
     out_stn: T.Dict[str, T.List[T.Any]] = {
@@ -32,7 +33,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     pfcst = stn_data["pfcst"]["row"]
 
     # Check and fill missing dates with -99
-    if len(pfcst) != 7:
+    if len(pfcst) != 9:
         missing_dts: T.List[str] = find_missing_dates(pfcst, "pfcst")
         for d in missing_dts:
             out_stn[d].extend(
@@ -117,7 +118,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     nfdrs_fcst: T.List[T.Dict] = stn_data["nfdrs"]["row"]
 
     # Check and fill missing dates with -99
-    if len(nfdrs_fcst) != 7:
+    if len(nfdrs_fcst) != 9:
         missing_dts = find_missing_dates(nfdrs_fcst, "nfdrs")
         for d in missing_dts:
             out_stn[d].extend(["-99", "-99", "-99", "-99", "-99", "-99"])
@@ -151,8 +152,8 @@ def get_stn_headers(stn_data) -> T.List[str]:
             headers = [
                 f"*{s['sta_nm']}",
                 s["sta_id"],
-                s["latitude"],
-                s["longitude"],
+                str(round(float(s["latitude"]), 3)),
+                str(round(float(s["longitude"]), 3)),
                 today_dt.strftime("%Y%m%d"),
                 today_dt.strftime("%H"),
             ]
@@ -166,11 +167,12 @@ def get_stn_headers(stn_data) -> T.List[str]:
 def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
     "Find the missing dates in the WIMS output. Spookyyyy"
     # Get a date range, inclusive ends
-    # I hate this but the WIMS nfdrs excepts inconsistent dates
+    # I hate this but the WIMS nfdrs call expects inconsistent dates so I can't
+    # reuse the dates from constants.py
     if d_type in ["nfdrs", "pfcst"]:
         dates = enumerate_dates(
             (datetime.utcnow() + timedelta(days=1)),
-            (datetime.utcnow() + timedelta(days=7)),
+            (datetime.utcnow() + timedelta(days=9)),
         )
     else:
         dates = enumerate_dates(
@@ -192,3 +194,48 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
     wims_dates = set([day[data_date][:-5] for day in data])
     # Get the set difference
     return list(date_strs.difference(wims_dates))
+
+
+def write_data_to_file(stns: T.List[T.Dict], file_path: str):
+    with open(file_path, "w") as f:
+        for stn in stns:
+            # Write header row then remove from stn
+            f.write("\t".join(stn["headers"]) + "\n")
+            del stn["headers"]
+            # Write date row
+            sorted_dts = sorted(stn.keys())
+            f.write(f"Fcst Dy\t" + "\t".join(sorted_dts) + "\n")
+            # 11 rows for all the variables
+            for i in range(11):
+                row_vals = [stn[dt][i] for dt in sorted_dts]
+                f.write(
+                    f"{STN_LABELS['Fcst Dy'][i]}\t"
+                    + "\t".join(row_vals)
+                    + "\n"
+                )
+            f.write("\n")
+
+
+# def write_data_to_file(stns: T.List[T.Dict], file_path: str):
+#     """With justifying to resemble the original"""
+
+#     with open(file_path, "w") as f:
+#         for stn in stns:
+#             # Write header row
+#             f.write(
+#                 f"{stn['headers'][0]:<20}{stn['headers'][1]:<8}{stn['headers'][2]:<8}{stn['headers'][3]:<8}{stn['headers'][4]:<10}{stn['headers'][5]:<5}\n"
+#             )
+#             del stn["headers"]
+#             assert len(stn) == 9
+#             # Write date row
+#             sorted_dts = sorted(stn.keys())
+#             f.write(f"Fcst Dy\t" + "\t".join(sorted_dts) + "\n")
+#             # 11 rows for all the variables
+#             for i in range(11):
+#                 row_vals = [stn[dt][i] for dt in sorted_dts]
+#                 f.write(
+#                     f"{STN_LABELS['Fcst Dy'][i]}\t"
+#                     + "\t".join(row_vals)
+#                     + "\n"
+#                 )
+#             f.write("\n")

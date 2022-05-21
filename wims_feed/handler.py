@@ -2,11 +2,9 @@ import json
 import logging
 import typing as T
 
-import boto3
-
 from wims_feed.constants import DATES
-from wims_feed.io import get_station_data, get_station_list
-from wims_feed.processors import process_data
+from wims_feed.io import get_station_data, get_station_list, sync_to_s3
+from wims_feed.processors import process_data, write_data_to_file
 from wims_feed.settings import Settings
 
 logger = logging.getLogger(__name__)
@@ -18,7 +16,6 @@ settings = Settings()
 def run(event, context):
     """Main lambda handler"""
 
-    S3 = boto3.client("s3")
     BASE = "https://famprod.nwcg.gov/wims/xsql"
 
     # Get list of stns
@@ -46,14 +43,13 @@ def run(event, context):
         # Add to stn list
         final_data.append(processed_data)
 
-    # Write formatted data to txt file
-    with open(f"/tmp/ndfd_predserv_fcst.json", "w") as f:
+    with open(f"./test_data.json", "w") as f:
         json.dump(final_data, f)
 
-    # Make sure to write row headers too!
-    # STN_LABELS
-    # Send ittttt
-    with open(f"/tmp/ndfd_predserv_fcst.json", "rb") as f:
-        S3.upload_fileobj(f, settings.bucket_name, "ndfd_predserv_fcst.json")
+    write_data_to_file(final_data, f"/tmp/{settings.output_path}")
 
-    return {"message": "WIMS data successfully written"}
+    # Upload file to S3
+    with open(f"/tmp/{settings.output_path}", "rb") as f:
+        msg = sync_to_s3(f)
+
+    return msg
