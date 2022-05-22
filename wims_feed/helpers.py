@@ -14,7 +14,6 @@ def enumerate_dates(s: date, e: date) -> T.List[date]:
 def wims_to_list(
     stn_data: T.Dict[str, T.Dict],
 ) -> T.Dict[str, T.Dict[str, T.List[T.Dict[str, str]]]]:
-    print(stn_data)
     """The WIMS endpoints can return dict instead of list for queries with
     results of len(1). We need everything to stay pretty as list"""
     for d in stn_data:

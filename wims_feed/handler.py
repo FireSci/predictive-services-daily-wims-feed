@@ -1,4 +1,3 @@
-import json
 import logging
 import typing as T
 
@@ -16,7 +15,7 @@ settings = Settings()
 def run(event, context):
     """Main lambda handler"""
 
-    BASE = "https://famprod.nwcg.gov/wims/xsql"
+    BASE: str = "https://famprod.nwcg.gov/wims/xsql"
 
     # Get list of stns
     stns: T.List[T.Dict[str, T.Any]] = get_station_list(settings.station_path)
@@ -40,12 +39,11 @@ def run(event, context):
 
         # Process only the data we need
         processed_data = process_data(raw_data, stn)
+
         # Add to stn list
         final_data.append(processed_data)
 
-    with open(f"./test_data.json", "w") as f:
-        json.dump(final_data, f)
-
+    # Write data to file
     write_data_to_file(final_data, f"/tmp/{settings.output_path}")
 
     # Upload file to S3

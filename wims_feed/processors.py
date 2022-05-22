@@ -13,7 +13,9 @@ S3 = boto3.client("s3")
 
 def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     """Process all of the required data for a station"""
-    # Init dict of nine days
+    # Init dict of eleven days
+    # Note we only get data for 9 days but legacy WFAS format is 11 days so we
+    # fill the last two dates with -99s so forecast systems don't break. Gross
     dates: T.List[date] = enumerate_dates(
         (datetime.utcnow() - timedelta(days=1)).date(),
         (datetime.utcnow() + timedelta(days=9)).date(),
@@ -45,6 +47,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
                     "-99",
                 ]
             )
+
     # Fill found dates
     for day in pfcst:
         out_stn[day["fcst_dt"][:-5]].extend(
@@ -103,12 +106,12 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     for day in nfdrs_obs:
         out_stn[day["nfdr_dt"][:-5]].extend(
             [
-                day["bi"],
-                day["ec"],
-                day["ic"],
-                day["ten_hr"],
-                day["hu_hr"],
-                day["th_hr"],
+                str(round(float(day["bi"]))),
+                str(round(float(day["ec"]))),
+                str(round(float(day["ic"]))),
+                str(round(float(day["ten_hr"]))),
+                str(round(float(day["hu_hr"]))),
+                str(round(float(day["th_hr"]))),
             ]
         )
 
@@ -126,12 +129,12 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     for day in nfdrs_fcst:
         out_stn[day["nfdr_dt"][:-5]].extend(
             [
-                day["bi"],
-                day["ec"],
-                day["ic"],
-                day["ten_hr"],
-                day["hu_hr"],
-                day["th_hr"],
+                str(round(float(day["bi"]))),
+                str(round(float(day["ec"]))),
+                str(round(float(day["ic"]))),
+                str(round(float(day["ten_hr"]))),
+                str(round(float(day["hu_hr"]))),
+                str(round(float(day["th_hr"]))),
             ]
         )
 
@@ -165,10 +168,14 @@ def get_stn_headers(stn_data) -> T.List[str]:
 
 
 def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
-    "Find the missing dates in the WIMS output. Spookyyyy"
+    """Find the missing dates in the WIMS output. This will always be called on
+    forecast wx and nfdrs endpoints since we only request 7 days of data but
+    legacy ingest requires 9 forecast days. This will help us fill those last
+    two days plus any missing dates.
+    """
     # Get a date range, inclusive ends
-    # I hate this but the WIMS nfdrs call expects inconsistent dates so I can't
-    # reuse the dates from constants.py
+    # Bummer to recreate date ranges here but the WIMS API date parameters are
+    # different than the data. ~~GrAnDpA WiMs PrObz~~
     if d_type in ["nfdrs", "pfcst"]:
         dates = enumerate_dates(
             (datetime.utcnow() + timedelta(days=1)),
@@ -192,41 +199,18 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
 
     # Get the dates from WIMS output
     wims_dates = set([day[data_date][:-5] for day in data])
-    # Get the set difference
+
+    # Get the set difference (dates that are missing from WIMS)
     return list(date_strs.difference(wims_dates))
 
 
-def write_data_to_file(stns: T.List[T.Dict], file_path: str):
-    with open(file_path, "w") as f:
-        for stn in stns:
-            # Write header row then remove from stn
-            f.write("\t".join(stn["headers"]) + "\n")
-            del stn["headers"]
-            # Write date row
-            sorted_dts = sorted(stn.keys())
-            f.write(f"Fcst Dy\t" + "\t".join(sorted_dts) + "\n")
-            # 11 rows for all the variables
-            for i in range(11):
-                row_vals = [stn[dt][i] for dt in sorted_dts]
-                f.write(
-                    f"{STN_LABELS['Fcst Dy'][i]}\t"
-                    + "\t".join(row_vals)
-                    + "\n"
-                )
-            f.write("\n")
-
-
 # def write_data_to_file(stns: T.List[T.Dict], file_path: str):
-#     """With justifying to resemble the original"""
-
+#     """Legacy forecast system expects data in an exacting, painful format"""
 #     with open(file_path, "w") as f:
 #         for stn in stns:
-#             # Write header row
-#             f.write(
-#                 f"{stn['headers'][0]:<20}{stn['headers'][1]:<8}{stn['headers'][2]:<8}{stn['headers'][3]:<8}{stn['headers'][4]:<10}{stn['headers'][5]:<5}\n"
-#             )
+#             # Write header row then remove from stn
+#             f.write("\t".join(stn["headers"]) + "\n")
 #             del stn["headers"]
-#             assert len(stn) == 9
 #             # Write date row
 #             sorted_dts = sorted(stn.keys())
 #             f.write(f"Fcst Dy\t" + "\t".join(sorted_dts) + "\n")
@@ -239,3 +223,33 @@ def write_data_to_file(stns: T.List[T.Dict], file_path: str):
 #                     + "\n"
 #                 )
 #             f.write("\n")
+
+
+def write_data_to_file(stns: T.List[T.Dict], file_path: str):
+    """With justifying to resemble the original"""
+    with open(file_path, "w") as f:
+        for stn in stns:
+            # Write header row
+            f.write(
+                f"{stn['headers'][0]:<20}{stn['headers'][1]:<8}{stn['headers'][2]:<8}{stn['headers'][3]:<9}{stn['headers'][4]:<10}{stn['headers'][5]:<5}\n"
+            )
+            del stn["headers"]
+
+            # Write date row
+            sorted_dts = sorted(stn.keys())
+            f.write(
+                f"{'Fcst Dy':<20}"
+                + "".join(f"{x:<9}" for x in sorted_dts)
+                + "\n"
+            )
+
+            # Write variable rows
+            # 11 rows for all the variables
+            for i in range(11):
+                row_vals = [stn[dt][i] for dt in sorted_dts]
+                f.write(
+                    f"{STN_LABELS['Fcst Dy'][i]:<22}"
+                    + "".join(f"{x:<9}" for x in row_vals)
+                    + "\n"
+                )
+            f.write("\n")

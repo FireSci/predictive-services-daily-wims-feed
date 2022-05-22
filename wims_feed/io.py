@@ -18,7 +18,7 @@ def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
 
 def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
     """Given a list of URLs for a particular station, returns data from WIMS.
-    This should also return values for all endpoints even if its just None"""
+    This should return values for all endpoints even if its just None"""
     stn_data: T.Dict = {}
     for url in urls:
         response = requests.get(url)
@@ -35,7 +35,7 @@ def sync_to_s3(file_path: str) -> T.Dict[str, str]:
     try:
         S3 = boto3.client("s3")
         S3.upload_fileobj(
-            file_path, settings.bucket_name, settings.output_path
+            file_path, settings.bucket_name, "formatting_test.json"
         )
         msg = {
             "status": "success",
