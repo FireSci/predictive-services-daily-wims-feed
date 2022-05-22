@@ -1,8 +1,15 @@
 org: jcla490
 app: ps-daily-wims-feed
 service: ps-daily-wims-feed
-
 frameworkVersion: '3'
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    slim: true
+    fileName: requirements.txt
+    dockerizePip: non-linux
 
 package:
   patterns:
@@ -10,11 +17,13 @@ package:
     - '!.mypy_cache'
     - '!parse_stations'
     - '!notes'
+    - '!tests'
 
 provider:
   name: aws
   region: us-west-2
   runtime: python3.8
+  timeout: 900 # 15 min
   deploymentBucket:
     blockPublicAccess: true
     maxPreviousDeploymentArtifacts: 3
@@ -26,6 +35,8 @@ provider:
           Action:
             - 's3:PutObject'
             - 's3:GetObject'
+            - "s3:GetObject"
+            - "s3:GetObjectAcl"
           Resource:
             - 'arn:aws:s3:::predictive-services-open-data-us-west-2/*'
             - 'arn:aws:s3:::predictive-services-open-data-us-west-2'
@@ -36,7 +47,7 @@ functions:
     handler: wims_feed.handler.run
     events:
       # Invoke Lambda every day at 2200Z
-      - schedule: cron(0 22 * * ? *)
+      - schedule: cron(30 22 * * ? *)
 
 resources:
   Resources:

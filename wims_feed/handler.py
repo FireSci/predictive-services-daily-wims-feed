@@ -20,6 +20,9 @@ def run(event, context):
     # Get list of stns
     stns: T.List[T.Dict[str, T.Any]] = get_station_list(settings.station_path)
 
+    logger.info(
+        f"Processing {len(stns)} stations. This may take a few minutes!"
+    )
     final_data = []
     for stn in stns:
         # Build request urls
@@ -43,11 +46,15 @@ def run(event, context):
         # Add to stn list
         final_data.append(processed_data)
 
+    logger.info(
+        f"Processing complete!. Writing data to file and making pretty."
+    )
     # Write data to file
     write_data_to_file(final_data, f"/tmp/{settings.output_path}")
 
+    logger.info(f"Uploading to S3!")
     # Upload file to S3
     with open(f"/tmp/{settings.output_path}", "rb") as f:
         msg = sync_to_s3(f)
-
+    logger.info(f"{settings.output_path} was successfully synced!")
     return msg

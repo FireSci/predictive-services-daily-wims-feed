@@ -55,7 +55,7 @@ needed dependencies in a local environment.
 Finally, we can ensure we activate our local environment and run our tests:
 ```bash
 poetry shell
-pytest wims_feed/tests.py
+pytest
 ```
 
 ## Making code changes
