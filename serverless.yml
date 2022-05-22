@@ -18,6 +18,7 @@ package:
     - '!parse_stations'
     - '!notes'
     - '!tests'
+    - '!node_modules'
 
 provider:
   name: aws

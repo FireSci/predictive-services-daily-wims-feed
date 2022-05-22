@@ -8,3 +8,4 @@ __pycache__
 serverless_sdk
 s_cronHandler.py
 .pytest_cache
+node_modules
