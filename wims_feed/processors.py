@@ -4,7 +4,7 @@ from datetime import date, datetime, timedelta
 import boto3
 
 from wims_feed.constants import STN_LABELS
-from wims_feed.helpers import dict_to_list, enumerate_dates
+from wims_feed.helpers import enumerate_dates, wims_to_list
 from wims_feed.settings import Settings
 
 settings = Settings()
@@ -25,7 +25,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
 
     # Make sure data from endpoints are list, not dict. Happens when endpoint
     # response has only *one* ob/fcst
-    stn_data = dict_to_list(stn_data)
+    stn_data = wims_to_list(stn_data)
 
     ###########################################################################
     #  Weather forecast processing                                            #
