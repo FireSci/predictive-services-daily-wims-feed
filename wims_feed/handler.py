@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import typing as T
 
@@ -8,12 +9,12 @@ from wims_feed.settings import Settings
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-
+loop = asyncio.get_event_loop()
 settings = Settings()
 
 
-def run(event, context):
-    """Main lambda handler"""
+async def worker(event, context):
+    """Main worker"""
 
     BASE: str = "https://famprod.nwcg.gov/wims/xsql"
 
@@ -38,7 +39,7 @@ def run(event, context):
         ]
 
         # Make requests to WIMS endpoints
-        raw_data = get_station_data(urls)
+        raw_data = await get_station_data(urls)
 
         # Process only the data we need
         processed_data = process_data(raw_data, stn)
@@ -58,3 +59,7 @@ def run(event, context):
         msg = sync_to_s3(f)
     logger.info(f"{settings.output_path} was successfully synced!")
     return msg
+
+
+def run(event, context):
+    return loop.run_until_complete(worker(event, context))

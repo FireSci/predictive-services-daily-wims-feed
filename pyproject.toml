@@ -8,10 +8,12 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 boto3 = "^1.23.0"
-requests = "^2.27.1"
 xmltodict = "^0.13.0"
 pydantic = "^1.9.0"
 types-requests = "^2.27.27"
+aiohttp = "^3.8.1"
+chardet = "^4.0.0"
+aiodns = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"

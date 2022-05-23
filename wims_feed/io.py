@@ -1,12 +1,16 @@
+import asyncio
 import json
+import logging
 import typing as T
 
+import aiohttp
 import boto3
-import requests  # type: ignore
 import xmltodict
 
 from wims_feed.settings import Settings
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 settings = Settings()
 
 
@@ -16,18 +20,26 @@ def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
         return json.load(json_file)
 
 
-def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
+async def get(url, session):
+    try:
+        async with session.get(url=url) as response:
+            r = await response.read()
+            return xmltodict.parse(r)
+
+    except Exception as e:
+        logger.error(f"Unable to get url {url} due to {e.__class__}.")
+
+
+async def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
     """Given a list of URLs for a particular station, returns data from WIMS.
     This should return values for all endpoints even if its just None"""
     stn_data: T.Dict = {}
-    for url in urls:
-        response = requests.get(url)
-        dict_data = xmltodict.parse(response.content)
-        # Since we call nfdrs endpoint twice, this works because of order of
-        # urls but will need to change if async implemented
-        if "nfdrs" in stn_data and "nfdrs" in dict_data:
-            dict_data["nfdrs_obs"] = dict_data.pop("nfdrs")
-        stn_data = {**stn_data, **dict_data}
+    async with aiohttp.ClientSession() as session:
+        url_resps = await asyncio.gather(*[get(url, session) for url in urls])
+    for resp in url_resps:
+        if "nfdrs" in stn_data and "nfdrs" in resp:
+            resp["nfdrs_obs"] = resp.pop("nfdrs")
+        stn_data = {**stn_data, **resp}
     return stn_data
 
 
