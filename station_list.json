@@ -1,242 +1,2566 @@
 [
     {
-        "STNID": 20207,
-        "RS": 13,
-        "MP": 2,
-        "MSGC": "16Y1P"
+        "station_id": 20207,
+        "rs": 13
     },
     {
-        "STNID": 20212,
-        "RS": 12,
-        "MP": 2,
-        "MSGC": "16Y2P"
+        "station_id": 20212,
+        "rs": 12
     },
     {
-        "STNID": 20213,
-        "RS": 13,
-        "MP": 7,
-        "MSGC": "16Y1P"
+        "station_id": 20213,
+        "rs": 13
     },
     {
-        "STNID": 20115,
-        "RS": 13,
-        "MP": 3,
-        "MSGC": "16Y2A"
+        "station_id": 20115,
+        "rs": 13
     },
     {
-        "STNID": 20501,
-        "RS": 13,
-        "MP": 2,
-        "MSGC": "16Y2P"
+        "station_id": 20501,
+        "rs": 13
     },
     {
-        "STNID": 20509,
-        "RS": 13,
-        "MP": 2,
-        "MSGC": "16Y2A"
+        "station_id": 20509,
+        "rs": 13
     },
     {
-        "STNID": 45801,
-        "RS": 13,
-        "MP": 3,
-        "MSGC": "16Y1P"
+        "station_id": 45801,
+        "rs": 13
     },
     {
-        "STNID": 20402,
-        "RS": 12,
-        "MP": 7,
-        "MSGC": "16Y2P"
+        "station_id": 20402,
+        "rs": 12
     },
     {
-        "STNID": 290101,
-        "RS": 12,
-        "MP": 7,
-        "MSGC": "16Y3P"
+        "station_id": 290101,
+        "rs": 12
     },
     {
-        "STNID": 290102,
-        "RS": 13,
-        "MP": 7,
-        "MSGC": "16Y2P"
+        "station_id": 290102,
+        "rs": 13
     },
     {
-        "STNID": 20209,
-        "RS": 13,
-        "MP": 2,
-        "MSGC": "16Y1P"
+        "station_id": 20209,
+        "rs": 13
     },
     {
-        "STNID": 20301,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y2P"
+        "station_id": 20301,
+        "rs": 13
     },
     {
-        "STNID": 20303,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y2P"
+        "station_id": 20303,
+        "rs": 13
     },
     {
-        "STNID": 20601,
-        "RS": 13,
-        "MP": 6,
-        "MSGC": "16Y2P"
+        "station_id": 20601,
+        "rs": 13
     },
     {
-        "STNID": 20606,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y1A"
+        "station_id": 20606,
+        "rs": 13
     },
     {
-        "STNID": 21005,
-        "RS": 13,
-        "MP": 6,
-        "MSGC": "16Y3A"
+        "station_id": 21005,
+        "rs": 13
     },
     {
-        "STNID": 21007,
-        "RS": 13,
-        "MP": 7,
-        "MSGC": "16Y3P"
+        "station_id": 21007,
+        "rs": 13
     },
     {
-        "STNID": 21202,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y1A"
+        "station_id": 21202,
+        "rs": 13
     },
     {
-        "STNID": 21206,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y1P"
+        "station_id": 21206,
+        "rs": 13
     },
     {
-        "STNID": 290702,
-        "RS": 13,
-        "MP": 5,
-        "MSGC": "16Y2P"
+        "station_id": 290702,
+        "rs": 13
     },
     {
-        "STNID": 290801,
-        "RS": 13,
-        "MP": 1,
-        "MSGC": "16Y2A"
+        "station_id": 290801,
+        "rs": 13
     },
     {
-        "STNID": 291302,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y2P"
+        "station_id": 291302,
+        "rs": 13
     },
     {
-        "STNID": 20401,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y2P"
+        "station_id": 20401,
+        "rs": 13
     },
     {
-        "STNID": 292001,
-        "RS": 13,
-        "MP": 5,
-        "MSGC": "16Y3P"
+        "station_id": 292001,
+        "rs": 13
     },
     {
-        "STNID": 292008,
-        "RS": 13,
-        "MP": 1,
-        "MSGC": "16Y1P"
+        "station_id": 292008,
+        "rs": 13
     },
     {
-        "STNID": 292009,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y2P"
+        "station_id": 292009,
+        "rs": 13
     },
     {
-        "STNID": 292103,
-        "RS": 12,
-        "MP": 8,
-        "MSGC": "16Y1A"
+        "station_id": 292103,
+        "rs": 12
     },
     {
-        "STNID": 292702,
-        "RS": 13,
-        "MP": 8,
-        "MSGC": "16Y1P"
+        "station_id": 292702,
+        "rs": 13
     },
     {
-        "STNID": 292903,
-        "RS": 13,
-        "MP": 5,
-        "MSGC": "16Y3P"
+        "station_id": 292903,
+        "rs": 13
     },
     {
-        "STNID": 290210,
-        "RS": 13,
-        "MP": 5,
-        "MSGC": "16Y2P"
+        "station_id": 290210,
+        "rs": 13
     },
     {
-        "STNID": 291202,
-        "RS": 13,
-        "MP": 5,
-        "MSGC": "16Y2P"
+        "station_id": 291202,
+        "rs": 13
     },
     {
-        "STNID": 291501,
-        "RS": 13,
-        "MP": 7,
-        "MSGC": "16Y2P"
+        "station_id": 291501,
+        "rs": 13
     },
     {
-        "STNID": 292102,
-        "RS": 13,
-        "MP": 6,
-        "MSGC": "16Y1P"
+        "station_id": 292102,
+        "rs": 13
     },
     {
-        "STNID": 292203,
-        "RS": 13,
-        "MP": 1,
-        "MSGC": "16Y2P"
+        "station_id": 292203,
+        "rs": 13
     },
     {
-        "STNID": 293002,
-        "RS": 13,
-        "MP": 1,
-        "MSGC": "16Y2P"
+        "station_id": 293002,
+        "rs": 13
     },
     {
-        "STNID": 293003,
-        "RS": 12,
-        "MP": 1,
-        "MSGC": "16Y2P"
+        "station_id": 293003,
+        "rs": 12
     },
     {
-        "STNID": 418701,
-        "RS": 13,
-        "MP": 6,
-        "MSGC": "16Y1P"
+        "station_id": 418701,
+        "rs": 13
     },
     {
-        "STNID": 292301,
-        "RS": 12,
-        "MP": 1,
-        "MSGC": "16Y1P"
+        "station_id": 292301,
+        "rs": 12
     },
     {
-        "STNID": 293101,
-        "RS": 12,
-        "MP": 2,
-        "MSGC": "16Y1P"
+        "station_id": 293101,
+        "rs": 12
     },
     {
-        "STNID": 293104,
-        "RS": 12,
-        "MP": 1,
-        "MSGC": "16Y1P"
+        "station_id": 293104,
+        "rs": 12
+    },
+    {
+        "station_id": 40427,
+        "rs": 12
+    },
+    {
+        "station_id": 40428,
+        "rs": 12
+    },
+    {
+        "station_id": 40421,
+        "rs": 12
+    },
+    {
+        "station_id": 40102,
+        "rs": 12
+    },
+    {
+        "station_id": 40425,
+        "rs": 13
+    },
+    {
+        "station_id": 41406,
+        "rs": 13
+    },
+    {
+        "station_id": 41411,
+        "rs": 12
+    },
+    {
+        "station_id": 41005,
+        "rs": 12
+    },
+    {
+        "station_id": 41001,
+        "rs": 12
+    },
+    {
+        "station_id": 41015,
+        "rs": 13
+    },
+    {
+        "station_id": 43402,
+        "rs": 13
+    },
+    {
+        "station_id": 43304,
+        "rs": 13
+    },
+    {
+        "station_id": 43802,
+        "rs": 13
+    },
+    {
+        "station_id": 43009,
+        "rs": 13
+    },
+    {
+        "station_id": 43404,
+        "rs": 13
+    },
+    {
+        "station_id": 43809,
+        "rs": 12
+    },
+    {
+        "station_id": 43008,
+        "rs": 13
+    },
+    {
+        "station_id": 43502,
+        "rs": 13
+    },
+    {
+        "station_id": 40408,
+        "rs": 12
+    },
+    {
+        "station_id": 40503,
+        "rs": 13
+    },
+    {
+        "station_id": 40244,
+        "rs": 12
+    },
+    {
+        "station_id": 40812,
+        "rs": 12
+    },
+    {
+        "station_id": 40239,
+        "rs": 12
+    },
+    {
+        "station_id": 40222,
+        "rs": 12
+    },
+    {
+        "station_id": 40614,
+        "rs": 12
+    },
+    {
+        "station_id": 40516,
+        "rs": 13
+    },
+    {
+        "station_id": 40231,
+        "rs": 13
+    },
+    {
+        "station_id": 40105,
+        "rs": 12
+    },
+    {
+        "station_id": 40218,
+        "rs": 12
+    },
+    {
+        "station_id": 40217,
+        "rs": 12
+    },
+    {
+        "station_id": 40519,
+        "rs": 12
+    },
+    {
+        "station_id": 40203,
+        "rs": 12
+    },
+    {
+        "station_id": 41503,
+        "rs": 12
+    },
+    {
+        "station_id": 41907,
+        "rs": 13
+    },
+    {
+        "station_id": 40802,
+        "rs": 13
+    },
+    {
+        "station_id": 40814,
+        "rs": 12
+    },
+    {
+        "station_id": 41410,
+        "rs": 13
+    },
+    {
+        "station_id": 41211,
+        "rs": 12
+    },
+    {
+        "station_id": 42202,
+        "rs": 12
+    },
+    {
+        "station_id": 41201,
+        "rs": 12
+    },
+    {
+        "station_id": 40615,
+        "rs": 13
+    },
+    {
+        "station_id": 40816,
+        "rs": 12
+    },
+    {
+        "station_id": 40611,
+        "rs": 12
+    },
+    {
+        "station_id": 40309,
+        "rs": 12
+    },
+    {
+        "station_id": 40306,
+        "rs": 13
+    },
+    {
+        "station_id": 40228,
+        "rs": 12
+    },
+    {
+        "station_id": 40243,
+        "rs": 12
+    },
+    {
+        "station_id": 40312,
+        "rs": 13
+    },
+    {
+        "station_id": 40221,
+        "rs": 13
+    },
+    {
+        "station_id": 40308,
+        "rs": 12
+    },
+    {
+        "station_id": 40233,
+        "rs": 12
+    },
+    {
+        "station_id": 42603,
+        "rs": 13
+    },
+    {
+        "station_id": 41213,
+        "rs": 12
+    },
+    {
+        "station_id": 40916,
+        "rs": 12
+    },
+    {
+        "station_id": 41908,
+        "rs": 12
+    },
+    {
+        "station_id": 40723,
+        "rs": 12
+    },
+    {
+        "station_id": 40609,
+        "rs": 12
+    },
+    {
+        "station_id": 41701,
+        "rs": 13
+    },
+    {
+        "station_id": 40630,
+        "rs": 13
+    },
+    {
+        "station_id": 40719,
+        "rs": 12
+    },
+    {
+        "station_id": 41806,
+        "rs": 12
+    },
+    {
+        "station_id": 42601,
+        "rs": 13
+    },
+    {
+        "station_id": 40730,
+        "rs": 13
+    },
+    {
+        "station_id": 40910,
+        "rs": 13
+    },
+    {
+        "station_id": 260111,
+        "rs": 12
+    },
+    {
+        "station_id": 40728,
+        "rs": 12
+    },
+    {
+        "station_id": 40709,
+        "rs": 13
+    },
+    {
+        "station_id": 40714,
+        "rs": 12
+    },
+    {
+        "station_id": 41310,
+        "rs": 12
+    },
+    {
+        "station_id": 43709,
+        "rs": 12
+    },
+    {
+        "station_id": 43710,
+        "rs": 12
+    },
+    {
+        "station_id": 43605,
+        "rs": 13
+    },
+    {
+        "station_id": 44522,
+        "rs": 12
+    },
+    {
+        "station_id": 44713,
+        "rs": 12
+    },
+    {
+        "station_id": 44729,
+        "rs": 12
+    },
+    {
+        "station_id": 44707,
+        "rs": 12
+    },
+    {
+        "station_id": 44719,
+        "rs": 12
+    },
+    {
+        "station_id": 44722,
+        "rs": 12
+    },
+    {
+        "station_id": 44204,
+        "rs": 12
+    },
+    {
+        "station_id": 44106,
+        "rs": 13
+    },
+    {
+        "station_id": 44516,
+        "rs": 13
+    },
+    {
+        "station_id": 44114,
+        "rs": 13
+    },
+    {
+        "station_id": 43613,
+        "rs": 13
+    },
+    {
+        "station_id": 44510,
+        "rs": 12
+    },
+    {
+        "station_id": 44717,
+        "rs": 13
+    },
+    {
+        "station_id": 44602,
+        "rs": 12
+    },
+    {
+        "station_id": 44409,
+        "rs": 13
+    },
+    {
+        "station_id": 44310,
+        "rs": 12
+    },
+    {
+        "station_id": 44914,
+        "rs": 13
+    },
+    {
+        "station_id": 44916,
+        "rs": 13
+    },
+    {
+        "station_id": 45203,
+        "rs": 13
+    },
+    {
+        "station_id": 44302,
+        "rs": 13
+    },
+    {
+        "station_id": 44915,
+        "rs": 13
+    },
+    {
+        "station_id": 44301,
+        "rs": 13
+    },
+    {
+        "station_id": 44904,
+        "rs": 13
+    },
+    {
+        "station_id": 45731,
+        "rs": 13
+    },
+    {
+        "station_id": 45433,
+        "rs": 12
+    },
+    {
+        "station_id": 45412,
+        "rs": 12
+    },
+    {
+        "station_id": 45734,
+        "rs": 13
+    },
+    {
+        "station_id": 45619,
+        "rs": 13
+    },
+    {
+        "station_id": 45443,
+        "rs": 12
+    },
+    {
+        "station_id": 45313,
+        "rs": 12
+    },
+    {
+        "station_id": 45113,
+        "rs": 13
+    },
+    {
+        "station_id": 45302,
+        "rs": 13
+    },
+    {
+        "station_id": 45426,
+        "rs": 12
+    },
+    {
+        "station_id": 45421,
+        "rs": 13
+    },
+    {
+        "station_id": 45314,
+        "rs": 13
+    },
+    {
+        "station_id": 45303,
+        "rs": 13
+    },
+    {
+        "station_id": 45114,
+        "rs": 13
+    },
+    {
+        "station_id": 45435,
+        "rs": 12
+    },
+    {
+        "station_id": 45436,
+        "rs": 12
+    },
+    {
+        "station_id": 45101,
+        "rs": 12
+    },
+    {
+        "station_id": 45105,
+        "rs": 13
+    },
+    {
+        "station_id": 45102,
+        "rs": 12
+    },
+    {
+        "station_id": 45701,
+        "rs": 12
+    },
+    {
+        "station_id": 45707,
+        "rs": 12
+    },
+    {
+        "station_id": 45708,
+        "rs": 12
+    },
+    {
+        "station_id": 45604,
+        "rs": 13
+    },
+    {
+        "station_id": 45709,
+        "rs": 12
+    },
+    {
+        "station_id": 45710,
+        "rs": 13
+    },
+    {
+        "station_id": 45620,
+        "rs": 13
+    },
+    {
+        "station_id": 45122,
+        "rs": 13
+    },
+    {
+        "station_id": 45129,
+        "rs": 13
+    },
+    {
+        "station_id": 45112,
+        "rs": 12
+    },
+    {
+        "station_id": 45438,
+        "rs": 12
+    },
+    {
+        "station_id": 45440,
+        "rs": 12
+    },
+    {
+        "station_id": 45444,
+        "rs": 12
+    },
+    {
+        "station_id": 44804,
+        "rs": 12
+    },
+    {
+        "station_id": 44806,
+        "rs": 13
+    },
+    {
+        "station_id": 43708,
+        "rs": 13
+    },
+    {
+        "station_id": 100101,
+        "rs": 13
+    },
+    {
+        "station_id": 100204,
+        "rs": 13
+    },
+    {
+        "station_id": 240107,
+        "rs": 13
+    },
+    {
+        "station_id": 240110,
+        "rs": 13
+    },
+    {
+        "station_id": 240112,
+        "rs": 13
+    },
+    {
+        "station_id": 100711,
+        "rs": 13
+    },
+    {
+        "station_id": 100606,
+        "rs": 13
+    },
+    {
+        "station_id": 100421,
+        "rs": 13
+    },
+    {
+        "station_id": 100708,
+        "rs": 13
+    },
+    {
+        "station_id": 241513,
+        "rs": 13
+    },
+    {
+        "station_id": 241211,
+        "rs": 13
+    },
+    {
+        "station_id": 241206,
+        "rs": 13
+    },
+    {
+        "station_id": 241302,
+        "rs": 13
+    },
+    {
+        "station_id": 241507,
+        "rs": 12
+    },
+    {
+        "station_id": 241405,
+        "rs": 13
+    },
+    {
+        "station_id": 101037,
+        "rs": 13
+    },
+    {
+        "station_id": 100901,
+        "rs": 13
+    },
+    {
+        "station_id": 100714,
+        "rs": 13
+    },
+    {
+        "station_id": 101013,
+        "rs": 13
+    },
+    {
+        "station_id": 242907,
+        "rs": 13
+    },
+    {
+        "station_id": 101045,
+        "rs": 13
+    },
+    {
+        "station_id": 101031,
+        "rs": 13
+    },
+    {
+        "station_id": 242905,
+        "rs": 13
+    },
+    {
+        "station_id": 242912,
+        "rs": 13
+    },
+    {
+        "station_id": 240217,
+        "rs": 13
+    },
+    {
+        "station_id": 241904,
+        "rs": 13
+    },
+    {
+        "station_id": 241901,
+        "rs": 13
+    },
+    {
+        "station_id": 240207,
+        "rs": 13
+    },
+    {
+        "station_id": 241502,
+        "rs": 13
+    },
+    {
+        "station_id": 240210,
+        "rs": 12
+    },
+    {
+        "station_id": 243002,
+        "rs": 13
+    },
+    {
+        "station_id": 245405,
+        "rs": 13
+    },
+    {
+        "station_id": 241518,
+        "rs": 12
+    },
+    {
+        "station_id": 245501,
+        "rs": 13
+    },
+    {
+        "station_id": 245409,
+        "rs": 12
+    },
+    {
+        "station_id": 243206,
+        "rs": 12
+    },
+    {
+        "station_id": 245412,
+        "rs": 12
+    },
+    {
+        "station_id": 241802,
+        "rs": 13
+    },
+    {
+        "station_id": 240303,
+        "rs": 13
+    },
+    {
+        "station_id": 240307,
+        "rs": 13
+    },
+    {
+        "station_id": 240308,
+        "rs": 13
+    },
+    {
+        "station_id": 241907,
+        "rs": 12
+    },
+    {
+        "station_id": 241910,
+        "rs": 13
+    },
+    {
+        "station_id": 242102,
+        "rs": 12
+    },
+    {
+        "station_id": 242207,
+        "rs": 12
+    },
+    {
+        "station_id": 243303,
+        "rs": 12
+    },
+    {
+        "station_id": 244603,
+        "rs": 12
+    },
+    {
+        "station_id": 245607,
+        "rs": 13
+    },
+    {
+        "station_id": 244601,
+        "rs": 12
+    },
+    {
+        "station_id": 244902,
+        "rs": 13
+    },
+    {
+        "station_id": 244705,
+        "rs": 12
+    },
+    {
+        "station_id": 244803,
+        "rs": 13
+    },
+    {
+        "station_id": 240903,
+        "rs": 12
+    },
+    {
+        "station_id": 240902,
+        "rs": 12
+    },
+    {
+        "station_id": 240704,
+        "rs": 12
+    },
+    {
+        "station_id": 240601,
+        "rs": 13
+    },
+    {
+        "station_id": 242205,
+        "rs": 12
+    },
+    {
+        "station_id": 243704,
+        "rs": 13
+    },
+    {
+        "station_id": 245106,
+        "rs": 13
+    },
+    {
+        "station_id": 245105,
+        "rs": 13
+    },
+    {
+        "station_id": 245201,
+        "rs": 13
+    },
+    {
+        "station_id": 245108,
+        "rs": 13
+    },
+    {
+        "station_id": 245109,
+        "rs": 12
+    },
+    {
+        "station_id": 321703,
+        "rs": 12
+    },
+    {
+        "station_id": 320220,
+        "rs": 12
+    },
+    {
+        "station_id": 320101,
+        "rs": 12
+    },
+    {
+        "station_id": 242501,
+        "rs": 13
+    },
+    {
+        "station_id": 241102,
+        "rs": 12
+    },
+    {
+        "station_id": 322701,
+        "rs": 12
+    },
+    {
+        "station_id": 244301,
+        "rs": 12
+    },
+    {
+        "station_id": 323804,
+        "rs": 13
+    },
+    {
+        "station_id": 244102,
+        "rs": 12
+    },
+    {
+        "station_id": 244002,
+        "rs": 12
+    },
+    {
+        "station_id": 244201,
+        "rs": 13
+    },
+    {
+        "station_id": 322503,
+        "rs": 13
+    },
+    {
+        "station_id": 320401,
+        "rs": 12
+    },
+    {
+        "station_id": 323536,
+        "rs": 12
+    },
+    {
+        "station_id": 321401,
+        "rs": 13
+    },
+    {
+        "station_id": 320701,
+        "rs": 12
+    },
+    {
+        "station_id": 324605,
+        "rs": 12
+    },
+    {
+        "station_id": 210301,
+        "rs": 13
+    },
+    {
+        "station_id": 210405,
+        "rs": 13
+    },
+    {
+        "station_id": 210901,
+        "rs": 13
+    },
+    {
+        "station_id": 210801,
+        "rs": 13
+    },
+    {
+        "station_id": 211604,
+        "rs": 13
+    },
+    {
+        "station_id": 210203,
+        "rs": 13
+    },
+    {
+        "station_id": 211502,
+        "rs": 13
+    },
+    {
+        "station_id": 212601,
+        "rs": 13
+    },
+    {
+        "station_id": 215601,
+        "rs": 12
+    },
+    {
+        "station_id": 214001,
+        "rs": 13
+    },
+    {
+        "station_id": 214201,
+        "rs": 13
+    },
+    {
+        "station_id": 136101,
+        "rs": 13
+    },
+    {
+        "station_id": 213501,
+        "rs": 12
+    },
+    {
+        "station_id": 210514,
+        "rs": 13
+    },
+    {
+        "station_id": 211702,
+        "rs": 13
+    },
+    {
+        "station_id": 210709,
+        "rs": 13
+    },
+    {
+        "station_id": 211803,
+        "rs": 13
+    },
+    {
+        "station_id": 210512,
+        "rs": 13
+    },
+    {
+        "station_id": 210503,
+        "rs": 13
+    },
+    {
+        "station_id": 210509,
+        "rs": 13
+    },
+    {
+        "station_id": 470202,
+        "rs": 13
+    },
+    {
+        "station_id": 470302,
+        "rs": 13
+    },
+    {
+        "station_id": 471002,
+        "rs": 13
+    },
+    {
+        "station_id": 470703,
+        "rs": 13
+    },
+    {
+        "station_id": 471601,
+        "rs": 13
+    },
+    {
+        "station_id": 471801,
+        "rs": 13
+    },
+    {
+        "station_id": 470804,
+        "rs": 13
+    },
+    {
+        "station_id": 473901,
+        "rs": 13
+    },
+    {
+        "station_id": 473501,
+        "rs": 13
+    },
+    {
+        "station_id": 200703,
+        "rs": 13
+    },
+    {
+        "station_id": 201002,
+        "rs": 13
+    },
+    {
+        "station_id": 471301,
+        "rs": 13
+    },
+    {
+        "station_id": 201504,
+        "rs": 13
+    },
+    {
+        "station_id": 203802,
+        "rs": 13
+    },
+    {
+        "station_id": 202902,
+        "rs": 13
+    },
+    {
+        "station_id": 202010,
+        "rs": 13
+    },
+    {
+        "station_id": 120201,
+        "rs": 13
+    },
+    {
+        "station_id": 112001,
+        "rs": 13
+    },
+    {
+        "station_id": 232401,
+        "rs": 13
+    },
+    {
+        "station_id": 231301,
+        "rs": 13
+    },
+    {
+        "station_id": 135501,
+        "rs": 13
+    },
+    {
+        "station_id": 238502,
+        "rs": 13
+    },
+    {
+        "station_id": 239102,
+        "rs": 13
+    },
+    {
+        "station_id": 236403,
+        "rs": 13
+    },
+    {
+        "station_id": 119501,
+        "rs": 13
+    },
+    {
+        "station_id": 128905,
+        "rs": 13
+    },
+    {
+        "station_id": 125701,
+        "rs": 13
+    },
+    {
+        "station_id": 337301,
+        "rs": 13
+    },
+    {
+        "station_id": 460101,
+        "rs": 13
+    },
+    {
+        "station_id": 338401,
+        "rs": 13
+    },
+    {
+        "station_id": 460901,
+        "rs": 13
+    },
+    {
+        "station_id": 463001,
+        "rs": 13
+    },
+    {
+        "station_id": 463301,
+        "rs": 13
+    },
+    {
+        "station_id": 463802,
+        "rs": 13
+    },
+    {
+        "station_id": 464901,
+        "rs": 13
+    },
+    {
+        "station_id": 465401,
+        "rs": 13
+    },
+    {
+        "station_id": 463501,
+        "rs": 13
+    },
+    {
+        "station_id": 361231,
+        "rs": 13
+    },
+    {
+        "station_id": 360331,
+        "rs": 13
+    },
+    {
+        "station_id": 361171,
+        "rs": 13
+    },
+    {
+        "station_id": 301101,
+        "rs": 13
+    },
+    {
+        "station_id": 360131,
+        "rs": 13
+    },
+    {
+        "station_id": 360271,
+        "rs": 13
+    },
+    {
+        "station_id": 300312,
+        "rs": 13
+    },
+    {
+        "station_id": 300191,
+        "rs": 13
+    },
+    {
+        "station_id": 300892,
+        "rs": 13
+    },
+    {
+        "station_id": 300311,
+        "rs": 13
+    },
+    {
+        "station_id": 300891,
+        "rs": 13
+    },
+    {
+        "station_id": 430501,
+        "rs": 13
+    },
+    {
+        "station_id": 430601,
+        "rs": 13
+    },
+    {
+        "station_id": 270301,
+        "rs": 13
+    },
+    {
+        "station_id": 430402,
+        "rs": 13
+    },
+    {
+        "station_id": 170850,
+        "rs": 13
+    },
+    {
+        "station_id": 171603,
+        "rs": 12
+    },
+    {
+        "station_id": 170791,
+        "rs": 13
+    },
+    {
+        "station_id": 305103,
+        "rs": 13
+    },
+    {
+        "station_id": 370450,
+        "rs": 12
+    },
+    {
+        "station_id": 182201,
+        "rs": 13
+    },
+    {
+        "station_id": 180701,
+        "rs": 13
+    },
+    {
+        "station_id": 180201,
+        "rs": 13
+    },
+    {
+        "station_id": 280291,
+        "rs": 13
+    },
+    {
+        "station_id": 280091,
+        "rs": 13
+    },
+    {
+        "station_id": 182002,
+        "rs": 12
+    },
+    {
+        "station_id": 281501,
+        "rs": 13
+    },
+    {
+        "station_id": 181510,
+        "rs": 13
+    },
+    {
+        "station_id": 450130,
+        "rs": 13
+    },
+    {
+        "station_id": 450211,
+        "rs": 13
+    },
+    {
+        "station_id": 450117,
+        "rs": 12
+    },
+    {
+        "station_id": 450911,
+        "rs": 12
+    },
+    {
+        "station_id": 451415,
+        "rs": 13
+    },
+    {
+        "station_id": 451613,
+        "rs": 12
+    },
+    {
+        "station_id": 451509,
+        "rs": 12
+    },
+    {
+        "station_id": 451611,
+        "rs": 12
+    },
+    {
+        "station_id": 450306,
+        "rs": 13
+    },
+    {
+        "station_id": 350215,
+        "rs": 13
+    },
+    {
+        "station_id": 451209,
+        "rs": 13
+    },
+    {
+        "station_id": 350216,
+        "rs": 13
+    },
+    {
+        "station_id": 451718,
+        "rs": 13
+    },
+    {
+        "station_id": 451921,
+        "rs": 12
+    },
+    {
+        "station_id": 350604,
+        "rs": 13
+    },
+    {
+        "station_id": 351710,
+        "rs": 13
+    },
+    {
+        "station_id": 451105,
+        "rs": 13
+    },
+    {
+        "station_id": 352024,
+        "rs": 13
+    },
+    {
+        "station_id": 350726,
+        "rs": 13
+    },
+    {
+        "station_id": 352816,
+        "rs": 12
+    },
+    {
+        "station_id": 352552,
+        "rs": 12
+    },
+    {
+        "station_id": 352550,
+        "rs": 12
+    },
+    {
+        "station_id": 352545,
+        "rs": 13
+    },
+    {
+        "station_id": 350718,
+        "rs": 13
+    },
+    {
+        "station_id": 352919,
+        "rs": 12
+    },
+    {
+        "station_id": 353230,
+        "rs": 12
+    },
+    {
+        "station_id": 352920,
+        "rs": 12
+    },
+    {
+        "station_id": 353227,
+        "rs": 12
+    },
+    {
+        "station_id": 353228,
+        "rs": 12
+    },
+    {
+        "station_id": 353120,
+        "rs": 12
+    },
+    {
+        "station_id": 352554,
+        "rs": 12
+    },
+    {
+        "station_id": 352558,
+        "rs": 12
+    },
+    {
+        "station_id": 352915,
+        "rs": 12
+    },
+    {
+        "station_id": 452404,
+        "rs": 13
+    },
+    {
+        "station_id": 452206,
+        "rs": 13
+    },
+    {
+        "station_id": 452134,
+        "rs": 12
+    },
+    {
+        "station_id": 452306,
+        "rs": 13
+    },
+    {
+        "station_id": 350913,
+        "rs": 13
+    },
+    {
+        "station_id": 350917,
+        "rs": 12
+    },
+    {
+        "station_id": 352701,
+        "rs": 13
+    },
+    {
+        "station_id": 352107,
+        "rs": 13
+    },
+    {
+        "station_id": 352109,
+        "rs": 13
+    },
+    {
+        "station_id": 352620,
+        "rs": 13
+    },
+    {
+        "station_id": 353402,
+        "rs": 13
+    },
+    {
+        "station_id": 353344,
+        "rs": 12
+    },
+    {
+        "station_id": 352605,
+        "rs": 13
+    },
+    {
+        "station_id": 353423,
+        "rs": 13
+    },
+    {
+        "station_id": 353343,
+        "rs": 12
+    },
+    {
+        "station_id": 452040,
+        "rs": 13
+    },
+    {
+        "station_id": 452030,
+        "rs": 13
+    },
+    {
+        "station_id": 452029,
+        "rs": 12
+    },
+    {
+        "station_id": 452020,
+        "rs": 13
+    },
+    {
+        "station_id": 453412,
+        "rs": 12
+    },
+    {
+        "station_id": 452510,
+        "rs": 13
+    },
+    {
+        "station_id": 452513,
+        "rs": 12
+    },
+    {
+        "station_id": 452916,
+        "rs": 12
+    },
+    {
+        "station_id": 453601,
+        "rs": 12
+    },
+    {
+        "station_id": 453201,
+        "rs": 12
+    },
+    {
+        "station_id": 452601,
+        "rs": 12
+    },
+    {
+        "station_id": 351518,
+        "rs": 13
+    },
+    {
+        "station_id": 351502,
+        "rs": 12
+    },
+    {
+        "station_id": 352329,
+        "rs": 13
+    },
+    {
+        "station_id": 453803,
+        "rs": 13
+    },
+    {
+        "station_id": 352418,
+        "rs": 12
+    },
+    {
+        "station_id": 351520,
+        "rs": 12
+    },
+    {
+        "station_id": 352416,
+        "rs": 12
+    },
+    {
+        "station_id": 352327,
+        "rs": 13
+    },
+    {
+        "station_id": 353524,
+        "rs": 13
+    },
+    {
+        "station_id": 353612,
+        "rs": 13
+    },
+    {
+        "station_id": 353526,
+        "rs": 12
+    },
+    {
+        "station_id": 353512,
+        "rs": 12
+    },
+    {
+        "station_id": 353614,
+        "rs": 12
+    },
+    {
+        "station_id": 101044,
+        "rs": 12
+    },
+    {
+        "station_id": 101108,
+        "rs": 12
+    },
+    {
+        "station_id": 101402,
+        "rs": 12
+    },
+    {
+        "station_id": 101223,
+        "rs": 12
+    },
+    {
+        "station_id": 101109,
+        "rs": 12
+    },
+    {
+        "station_id": 101220,
+        "rs": 12
+    },
+    {
+        "station_id": 101312,
+        "rs": 12
+    },
+    {
+        "station_id": 101315,
+        "rs": 12
+    },
+    {
+        "station_id": 101311,
+        "rs": 12
+    },
+    {
+        "station_id": 101310,
+        "rs": 12
+    },
+    {
+        "station_id": 101303,
+        "rs": 13
+    },
+    {
+        "station_id": 101805,
+        "rs": 12
+    },
+    {
+        "station_id": 101314,
+        "rs": 12
+    },
+    {
+        "station_id": 103211,
+        "rs": 13
+    },
+    {
+        "station_id": 103210,
+        "rs": 12
+    },
+    {
+        "station_id": 103208,
+        "rs": 12
+    },
+    {
+        "station_id": 102709,
+        "rs": 12
+    },
+    {
+        "station_id": 103207,
+        "rs": 12
+    },
+    {
+        "station_id": 101708,
+        "rs": 13
+    },
+    {
+        "station_id": 101222,
+        "rs": 13
+    },
+    {
+        "station_id": 102712,
+        "rs": 13
+    },
+    {
+        "station_id": 102802,
+        "rs": 12
+    },
+    {
+        "station_id": 101809,
+        "rs": 12
+    },
+    {
+        "station_id": 102903,
+        "rs": 12
+    },
+    {
+        "station_id": 101812,
+        "rs": 12
+    },
+    {
+        "station_id": 104104,
+        "rs": 12
+    },
+    {
+        "station_id": 103209,
+        "rs": 12
+    },
+    {
+        "station_id": 102711,
+        "rs": 12
+    },
+    {
+        "station_id": 103205,
+        "rs": 12
+    },
+    {
+        "station_id": 102907,
+        "rs": 12
+    },
+    {
+        "station_id": 103403,
+        "rs": 12
+    },
+    {
+        "station_id": 104103,
+        "rs": 12
+    },
+    {
+        "station_id": 104105,
+        "rs": 12
+    },
+    {
+        "station_id": 104004,
+        "rs": 12
+    },
+    {
+        "station_id": 103903,
+        "rs": 12
+    },
+    {
+        "station_id": 104203,
+        "rs": 13
+    },
+    {
+        "station_id": 103703,
+        "rs": 12
+    },
+    {
+        "station_id": 104006,
+        "rs": 12
+    },
+    {
+        "station_id": 103902,
+        "rs": 12
+    },
+    {
+        "station_id": 103904,
+        "rs": 13
+    },
+    {
+        "station_id": 102004,
+        "rs": 13
+    },
+    {
+        "station_id": 102301,
+        "rs": 12
+    },
+    {
+        "station_id": 481307,
+        "rs": 12
+    },
+    {
+        "station_id": 480707,
+        "rs": 12
+    },
+    {
+        "station_id": 480709,
+        "rs": 13
+    },
+    {
+        "station_id": 481302,
+        "rs": 12
+    },
+    {
+        "station_id": 481306,
+        "rs": 12
+    },
+    {
+        "station_id": 480708,
+        "rs": 13
+    },
+    {
+        "station_id": 43702,
+        "rs": 12
+    },
+    {
+        "station_id": 260117,
+        "rs": 13
+    },
+    {
+        "station_id": 42802,
+        "rs": 12
+    },
+    {
+        "station_id": 43707,
+        "rs": 12
+    },
+    {
+        "station_id": 261204,
+        "rs": 12
+    },
+    {
+        "station_id": 40724,
+        "rs": 12
+    },
+    {
+        "station_id": 41302,
+        "rs": 12
+    },
+    {
+        "station_id": 260108,
+        "rs": 12
+    },
+    {
+        "station_id": 260114,
+        "rs": 12
+    },
+    {
+        "station_id": 260701,
+        "rs": 12
+    },
+    {
+        "station_id": 260504,
+        "rs": 12
+    },
+    {
+        "station_id": 260207,
+        "rs": 12
+    },
+    {
+        "station_id": 260208,
+        "rs": 12
+    },
+    {
+        "station_id": 260204,
+        "rs": 12
+    },
+    {
+        "station_id": 260203,
+        "rs": 12
+    },
+    {
+        "station_id": 260112,
+        "rs": 12
+    },
+    {
+        "station_id": 260202,
+        "rs": 12
+    },
+    {
+        "station_id": 260206,
+        "rs": 12
+    },
+    {
+        "station_id": 260503,
+        "rs": 12
+    },
+    {
+        "station_id": 260501,
+        "rs": 12
+    },
+    {
+        "station_id": 260603,
+        "rs": 12
+    },
+    {
+        "station_id": 260601,
+        "rs": 12
+    },
+    {
+        "station_id": 260810,
+        "rs": 13
+    },
+    {
+        "station_id": 261404,
+        "rs": 13
+    },
+    {
+        "station_id": 260310,
+        "rs": 12
+    },
+    {
+        "station_id": 260505,
+        "rs": 12
+    },
+    {
+        "station_id": 260315,
+        "rs": 13
+    },
+    {
+        "station_id": 260309,
+        "rs": 12
+    },
+    {
+        "station_id": 260305,
+        "rs": 12
+    },
+    {
+        "station_id": 260306,
+        "rs": 12
+    },
+    {
+        "station_id": 260314,
+        "rs": 13
+    },
+    {
+        "station_id": 260308,
+        "rs": 12
+    },
+    {
+        "station_id": 261406,
+        "rs": 12
+    },
+    {
+        "station_id": 260805,
+        "rs": 12
+    },
+    {
+        "station_id": 260807,
+        "rs": 12
+    },
+    {
+        "station_id": 260804,
+        "rs": 12
+    },
+    {
+        "station_id": 261604,
+        "rs": 12
+    },
+    {
+        "station_id": 261603,
+        "rs": 12
+    },
+    {
+        "station_id": 261608,
+        "rs": 12
+    },
+    {
+        "station_id": 261408,
+        "rs": 12
+    },
+    {
+        "station_id": 261702,
+        "rs": 13
+    },
+    {
+        "station_id": 261708,
+        "rs": 13
+    },
+    {
+        "station_id": 261705,
+        "rs": 13
+    },
+    {
+        "station_id": 420914,
+        "rs": 12
+    },
+    {
+        "station_id": 420911,
+        "rs": 12
+    },
+    {
+        "station_id": 420901,
+        "rs": 12
+    },
+    {
+        "station_id": 420908,
+        "rs": 12
+    },
+    {
+        "station_id": 420915,
+        "rs": 12
+    },
+    {
+        "station_id": 420403,
+        "rs": 13
+    },
+    {
+        "station_id": 421103,
+        "rs": 13
+    },
+    {
+        "station_id": 420706,
+        "rs": 13
+    },
+    {
+        "station_id": 420912,
+        "rs": 12
+    },
+    {
+        "station_id": 421101,
+        "rs": 12
+    },
+    {
+        "station_id": 421806,
+        "rs": 12
+    },
+    {
+        "station_id": 421502,
+        "rs": 12
+    },
+    {
+        "station_id": 421501,
+        "rs": 12
+    },
+    {
+        "station_id": 421807,
+        "rs": 12
+    },
+    {
+        "station_id": 421905,
+        "rs": 12
+    },
+    {
+        "station_id": 422610,
+        "rs": 13
+    },
+    {
+        "station_id": 422611,
+        "rs": 12
+    },
+    {
+        "station_id": 421415,
+        "rs": 12
+    },
+    {
+        "station_id": 421406,
+        "rs": 12
+    },
+    {
+        "station_id": 421416,
+        "rs": 12
+    },
+    {
+        "station_id": 421305,
+        "rs": 13
+    },
+    {
+        "station_id": 421407,
+        "rs": 12
+    },
+    {
+        "station_id": 421304,
+        "rs": 13
+    },
+    {
+        "station_id": 421301,
+        "rs": 13
+    },
+    {
+        "station_id": 421602,
+        "rs": 12
+    },
+    {
+        "station_id": 422102,
+        "rs": 12
+    },
+    {
+        "station_id": 421702,
+        "rs": 12
+    },
+    {
+        "station_id": 421405,
+        "rs": 12
+    },
+    {
+        "station_id": 422002,
+        "rs": 12
+    },
+    {
+        "station_id": 422711,
+        "rs": 12
+    },
+    {
+        "station_id": 422712,
+        "rs": 12
+    },
+    {
+        "station_id": 422710,
+        "rs": 12
+    },
+    {
+        "station_id": 422203,
+        "rs": 12
+    },
+    {
+        "station_id": 422803,
+        "rs": 13
+    },
+    {
+        "station_id": 422502,
+        "rs": 12
+    },
+    {
+        "station_id": 422606,
+        "rs": 13
+    },
+    {
+        "station_id": 422503,
+        "rs": 12
+    },
+    {
+        "station_id": 422608,
+        "rs": 13
+    },
+    {
+        "station_id": 422604,
+        "rs": 13
+    },
+    {
+        "station_id": 422807,
+        "rs": 12
+    },
+    {
+        "station_id": 422609,
+        "rs": 13
+    },
+    {
+        "station_id": 20224,
+        "rs": 13
+    },
+    {
+        "station_id": 20109,
+        "rs": 13
+    },
+    {
+        "station_id": 20108,
+        "rs": 13
+    },
+    {
+        "station_id": 20107,
+        "rs": 13
+    },
+    {
+        "station_id": 422806,
+        "rs": 12
+    },
+    {
+        "station_id": 20114,
+        "rs": 12
+    },
+    {
+        "station_id": 422805,
+        "rs": 13
+    },
+    {
+        "station_id": 480214,
+        "rs": 12
+    },
+    {
+        "station_id": 481410,
+        "rs": 12
+    },
+    {
+        "station_id": 480213,
+        "rs": 13
+    },
+    {
+        "station_id": 480804,
+        "rs": 12
+    },
+    {
+        "station_id": 480307,
+        "rs": 12
+    },
+    {
+        "station_id": 480906,
+        "rs": 13
+    },
+    {
+        "station_id": 480212,
+        "rs": 12
+    },
+    {
+        "station_id": 480904,
+        "rs": 12
+    },
+    {
+        "station_id": 480403,
+        "rs": 13
+    },
+    {
+        "station_id": 480306,
+        "rs": 12
+    },
+    {
+        "station_id": 481002,
+        "rs": 12
+    },
+    {
+        "station_id": 480605,
+        "rs": 12
+    },
+    {
+        "station_id": 480501,
+        "rs": 12
+    },
+    {
+        "station_id": 480502,
+        "rs": 13
+    },
+    {
+        "station_id": 390901,
+        "rs": 12
+    },
+    {
+        "station_id": 392606,
+        "rs": 13
+    },
+    {
+        "station_id": 392506,
+        "rs": 12
+    },
+    {
+        "station_id": 392603,
+        "rs": 13
+    },
+    {
+        "station_id": 395105,
+        "rs": 12
+    },
+    {
+        "station_id": 393505,
+        "rs": 13
+    },
+    {
+        "station_id": 393506,
+        "rs": 13
+    },
+    {
+        "station_id": 481903,
+        "rs": 12
+    },
+    {
+        "station_id": 481904,
+        "rs": 12
+    },
+    {
+        "station_id": 481801,
+        "rs": 12
+    },
+    {
+        "station_id": 482010,
+        "rs": 12
+    },
+    {
+        "station_id": 481502,
+        "rs": 12
+    },
+    {
+        "station_id": 481504,
+        "rs": 13
+    },
+    {
+        "station_id": 481411,
+        "rs": 13
+    },
+    {
+        "station_id": 481003,
+        "rs": 12
+    },
+    {
+        "station_id": 482106,
+        "rs": 12
+    },
+    {
+        "station_id": 482102,
+        "rs": 12
+    },
+    {
+        "station_id": 482011,
+        "rs": 12
+    },
+    {
+        "station_id": 50106,
+        "rs": 12
+    },
+    {
+        "station_id": 50104,
+        "rs": 13
+    },
+    {
+        "station_id": 50406,
+        "rs": 12
+    },
+    {
+        "station_id": 51404,
+        "rs": 12
+    },
+    {
+        "station_id": 50304,
+        "rs": 12
+    },
+    {
+        "station_id": 482105,
+        "rs": 12
+    },
+    {
+        "station_id": 50604,
+        "rs": 13
+    },
+    {
+        "station_id": 50508,
+        "rs": 12
+    },
+    {
+        "station_id": 50505,
+        "rs": 13
+    },
+    {
+        "station_id": 50507,
+        "rs": 13
+    },
+    {
+        "station_id": 52001,
+        "rs": 13
+    },
+    {
+        "station_id": 51901,
+        "rs": 13
+    },
+    {
+        "station_id": 51407,
+        "rs": 13
+    },
+    {
+        "station_id": 51402,
+        "rs": 13
+    },
+    {
+        "station_id": 51507,
+        "rs": 12
+    },
+    {
+        "station_id": 52410,
+        "rs": 12
+    },
+    {
+        "station_id": 51406,
+        "rs": 13
+    },
+    {
+        "station_id": 51504,
+        "rs": 12
+    },
+    {
+        "station_id": 52407,
+        "rs": 12
+    },
+    {
+        "station_id": 51506,
+        "rs": 12
+    },
+    {
+        "station_id": 51606,
+        "rs": 12
+    },
+    {
+        "station_id": 51607,
+        "rs": 13
+    },
+    {
+        "station_id": 51703,
+        "rs": 12
+    },
+    {
+        "station_id": 51508,
+        "rs": 12
+    },
+    {
+        "station_id": 53806,
+        "rs": 12
+    },
+    {
+        "station_id": 53808,
+        "rs": 12
+    },
+    {
+        "station_id": 53805,
+        "rs": 12
+    },
+    {
+        "station_id": 52409,
+        "rs": 12
+    },
+    {
+        "station_id": 52704,
+        "rs": 12
+    },
+    {
+        "station_id": 53804,
+        "rs": 12
+    },
+    {
+        "station_id": 53807,
+        "rs": 12
+    },
+    {
+        "station_id": 52813,
+        "rs": 12
+    },
+    {
+        "station_id": 54702,
+        "rs": 12
+    },
+    {
+        "station_id": 52902,
+        "rs": 13
+    },
+    {
+        "station_id": 52812,
+        "rs": 12
+    },
+    {
+        "station_id": 53102,
+        "rs": 13
+    },
+    {
+        "station_id": 53904,
+        "rs": 12
+    },
+    {
+        "station_id": 53603,
+        "rs": 12
+    },
+    {
+        "station_id": 53002,
+        "rs": 12
+    },
+    {
+        "station_id": 55704,
+        "rs": 12
+    },
+    {
+        "station_id": 55805,
+        "rs": 13
+    },
+    {
+        "station_id": 55205,
+        "rs": 13
+    },
+    {
+        "station_id": 56005,
+        "rs": 12
+    },
+    {
+        "station_id": 55305,
+        "rs": 12
+    },
+    {
+        "station_id": 55503,
+        "rs": 13
+    },
+    {
+        "station_id": 53903,
+        "rs": 13
+    },
+    {
+        "station_id": 56203,
+        "rs": 12
+    },
+    {
+        "station_id": 391201,
+        "rs": 12
+    },
+    {
+        "station_id": 393101,
+        "rs": 12
+    },
+    {
+        "station_id": 393801,
+        "rs": 12
+    },
+    {
+        "station_id": 395601,
+        "rs": 13
+    },
+    {
+        "station_id": 395901,
+        "rs": 12
+    },
+    {
+        "station_id": 250203,
+        "rs": 13
+    },
+    {
+        "station_id": 392602,
+        "rs": 13
+    },
+    {
+        "station_id": 250105,
+        "rs": 13
+    },
+    {
+        "station_id": 251905,
+        "rs": 12
+    },
+    {
+        "station_id": 250402,
+        "rs": 13
+    },
+    {
+        "station_id": 252402,
+        "rs": 12
+    },
+    {
+        "station_id": 56202,
+        "rs": 13
+    },
+    {
+        "station_id": 148601,
+        "rs": 13
+    },
+    {
+        "station_id": 146501,
+        "rs": 12
+    },
+    {
+        "station_id": 140401,
+        "rs": 12
+    },
+    {
+        "station_id": 142301,
+        "rs": 12
     }
 ]

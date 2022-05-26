@@ -20,7 +20,8 @@ def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
         return json.load(json_file)
 
 
-async def get(url, session):
+async def get_wims_data(url, session):
+    """Async request to WIMs for a particular url"""
     try:
         async with session.get(url=url) as response:
             r = await response.read()
@@ -34,8 +35,13 @@ async def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
     """Given a list of URLs for a particular station, returns data from WIMS.
     This should return values for all endpoints even if its just None"""
     stn_data: T.Dict = {}
+    # This is a context manager for establishing a session. Under the hood, there
+    # is a lot of connection management stuff going on. Outta sight, outta mind
     async with aiohttp.ClientSession() as session:
-        url_resps = await asyncio.gather(*[get(url, session) for url in urls])
+        # This will be a 'batch' representing all four api responses for a stn
+        url_resps: T.List[T.Dict] = await asyncio.gather(
+            *[get_wims_data(url, session) for url in urls]
+        )
     for resp in url_resps:
         if "nfdrs" in stn_data and "nfdrs" in resp:
             resp["nfdrs_obs"] = resp.pop("nfdrs")
