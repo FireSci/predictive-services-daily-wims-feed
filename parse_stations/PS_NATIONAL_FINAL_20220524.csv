@@ -1,0 +1,666 @@
+﻿station_name,station_id,psa_name,psa_code,gaccid,rs
+Tusayan,20207,Northwest AZ,SW01,10,13
+Dry Park,20212,Northwest AZ,SW01,10,12
+Frazier Wells,20213,Northwest AZ,SW01,10,13
+Moss Basin,20115,West-Central AZ,SW02,10,13
+Iron Springs,20501,West-Central AZ,SW02,10,13
+Stanton,20509,West-Central AZ,SW02,10,13
+Squaw Lake,45801,Southwest AZ,SW03,10,13
+Piney Hill,20402,Four Corners Area,SW04,10,12
+Washington Pass,290101,Four Corners Area,SW04,10,12
+Albino,290102,Four Corners Area,SW04,10,13
+Flagstaff,20209,Western Mogollon Rim,SW05,10,13
+Heber,20301,Western Mogollon Rim,SW05,10,13
+Lakeside,20303,Western Mogollon Rim,SW05,10,13
+Globe,20601,Central AZ/Phoenix Metro,SW06N,10,13
+Tonto Basin,20606,Central AZ/Phoenix Metro,SW06N,10,13
+Columbine,21005,Southeast AZ,SW06S,10,13
+Muleshoe,21007,Southeast AZ,SW06S,10,13
+Saguaro,21202,Southeast AZ,SW06S,10,13
+Sasabe,21206,Southeast AZ,SW06S,10,13
+Jemez,290702,Northwest NM Mtns.,SW07,10,13
+Tower,290801,Northwest NM Mtns.,SW07,10,13
+Grants,291302,Northwest NM Mtns.,SW07,10,13
+Alpine,20401,White Mtns. & Gila Region,SW08,10,13
+Beaverhead,292001,White Mtns. & Gila Region,SW08,10,13
+Slaughter,292008,White Mtns. & Gila Region,SW08,10,13
+Pelona,292009,White Mtns. & Gila Region,SW08,10,13
+Bosque,292103,South/Central NM Lowlands,SW09,10,12
+Hachita Valley,292702,South/Central NM Lowlands,SW09,10,13
+Dripping Springs,292903,South/Central NM Lowlands,SW09,10,13
+Truchas,290210,Sangre De Cristo Mountains,SW10,10,13
+Pecos,291202,Sangre De Cristo Mountains,SW10,10,13
+Mountainair,291501,Central NM Mtns. & Plains,SW11,10,13
+Chupadera,292102,Central NM Mtns. & Plains,SW11,10,13
+Smokey Bear,292203,South-Central NM Mtns.,SW12,10,13
+Mayhill,293002,South-Central NM Mtns.,SW12,10,13
+Mescal,293003,South-Central NM Mtns.,SW12,10,12
+Cedar,418701,Northeast & East-Central NM Plains,SW13,10,13
+Eight Mile,292301,Northeast & East-Central NM Plains,SW13,10,12
+Eight Mile,292301,Southeast NM Plains,SW14N,10,12
+Batdraw,293101,Southeast NM Plains,SW14N,10,12
+Caprock,293104,Southeast NM Plains,SW14N,10,12
+Notchko,40427,North Coast,NC01,4,12
+Westside,40428,North Coast,NC01,4,12
+Eel River Camp,40421,North Coast,NC01,4,12
+Gasquet,40102,North Coast,NC01,4,12
+School House,40425,North Coast,NC01,4,13
+Soda Creek,41406,Mid Coast To Mendocino,NC02,4,13
+Konocti,41411,Mid Coast To Mendocino,NC02,4,12
+Eel River,41005,Mid Coast To Mendocino,NC02,4,12
+Boonville,41001,Mid Coast To Mendocino,NC02,4,12
+Rodeo Valley,41015,Mid Coast To Mendocino,NC02,4,13
+Oakland North,43402,Bay Marine,NC03A,4,13
+La Honda,43304,Bay Marine,NC03A,4,13
+Corralitos,43802,Bay Marine,NC03A,4,13
+Las Trampas,43009,Bay Marine,NC03A,4,13
+Rose Peak,43404,Diablo-Santa Cruz Mtns,NC03B,4,13
+Ben Lomond,43809,Diablo-Santa Cruz Mtns,NC03B,4,12
+Black Diamond,43008,Diablo-Santa Cruz Mtns,NC03B,4,13
+Diablo Grande,43502,Diablo-Santa Cruz Mtns,NC03B,4,13
+Hoopa,40408,Northwestern Mtn,NC04,4,12
+Hayfork,40503,Northwestern Mtn,NC04,4,13
+Ash Creek,40244,Northwestern Mtn,NC04,4,12
+Pattymocus,40812,Northwestern Mtn,NC04,4,12
+Quartz Hill,40239,Northwestern Mtn,NC04,4,12
+Sawyers Bar,40222,Northwestern Mtn,NC04,4,12
+Sugarloaf (SHF),40614,Northwestern Mtn,NC04,4,12
+Trinity Camp,40516,Northwestern Mtn,NC04,4,13
+Somes Bar,40231,Northwestern Mtn,NC04,4,13
+Ship Mtn L.O.,40105,Northwestern Mtn,NC04,4,12
+Oak Knoll,40218,Northwestern Mtn,NC04,4,12
+Mt Shasta,40217,Northwestern Mtn,NC04,4,12
+Underwood,40519,Northwestern Mtn,NC04,4,12
+Blue Ridge (KNF),40203,Northwestern Mtn,NC04,4,12
+Stonyford,41503,Sac Valley/Foothills,NC05,4,12
+Lincoln,41907,Sac Valley/Foothills,NC05,4,13
+Eagle Peak,40802,Sac Valley/Foothills,NC05,4,13
+Corning,40814,Sac Valley/Foothills,NC05,4,12
+County Line,41410,Sac Valley/Foothills,NC05,4,13
+Cohasset,41211,Sac Valley/Foothills,NC05,4,12
+Brooks,42202,Sac Valley/Foothills,NC05,4,12
+Bangor,41201,Sac Valley/Foothills,NC05,4,12
+Whitmore,40615,Sac Valley/Foothills,NC05,4,13
+Thomes Creek,40816,Sac Valley/Foothills,NC05,4,12
+Redding,40611,Sac Valley/Foothills,NC05,4,12
+Devils Garden,40309,NE California,NC06,4,12
+Timber Mountain,40306,NE California,NC06,4,13
+Weed Airport,40228,NE California,NC06,4,12
+Van Bremmer,40243,NE California,NC06,4,12
+Rush Creek,40312,NE California,NC06,4,13
+Round Mountain,40221,NE California,NC06,4,13
+Juniper Creek,40308,NE California,NC06,4,12
+Indian Well,40233,NE California,NC06,4,12
+Bald Mtn,42603,Northern Sierra,NC07,4,13
+Carpenter Ridge,41213,Northern Sierra,NC07,4,12
+Cashman,40916,Northern Sierra,NC07,4,12
+SeedOrchard,41908,Northern Sierra,NC07,4,12
+Ladder Butte,40723,Northern Sierra,NC07,4,12
+Manzanita Lake,40609,Northern Sierra,NC07,4,12
+Pike Cnty LO,41701,Northern Sierra,NC07,4,13
+Soldier Mountain,40630,Northern Sierra,NC07,4,13
+Westwood,40719,Northern Sierra,NC07,4,12
+Whitecloud,41806,Northern Sierra,NC07,4,12
+Beaver,42601,Northern Sierra,NC07,4,13
+Gordon,40730,Northern Sierra,NC07,4,13
+Quincy,40910,Northern Sierra,NC07,4,13
+Barrel Springs,260111,Far Eastside,NC08,4,12
+Bull Flat,40728,Far Eastside,NC08,4,12
+Laufman,40709,Far Eastside,NC08,4,13
+Ravendale,40714,Far Eastside,NC08,4,12
+Stampede,41310,Far Eastside,NC08,4,12
+Crestview,43709,Eastern Sierra,SC01,8,12
+Rock Creek,43710,Eastern Sierra,SC01,8,12
+Mt. Elizabeth,43605,Central Sierra,SC02,8,13
+Beaver,42601,Central Sierra,SC02,8,13
+Shaver,44522,Central Sierra,SC02,8,12
+Park Ridge,44713,Southern Sierra,SC03,8,12
+Sugarloaf,44729,Southern Sierra,SC03,8,12
+Johnsondale,44707,Southern Sierra,SC03,8,12
+Cedar Grove,44719,Southern Sierra,SC03,8,12
+Blackrock,44722,Southern Sierra,SC03,8,12
+North Fork,44204,Sierra Foothills,SC04,8,12
+Mariposa,44106,Sierra Foothills,SC04,8,13
+Fancher Creek,44516,Sierra Foothills,SC04,8,13
+Catheys Valley,44114,Sierra Foothills,SC04,8,13
+Green Spring,43613,Sierra Foothills,SC04,8,13
+Trimmer,44510,Sierra Foothills,SC04,8,12
+Oak Opening,44717,Sierra Foothills,SC04,8,13
+Fancher Creek,44516,Central Valley,SC05,8,13
+Kettleman Hills,44602,Central Valley,SC05,8,12
+Hernandez,44409,Central Coast Interior,SC06,8,13
+Parkfield,44310,Central Coast Interior,SC06,8,12
+La Panza,44914,Central Coast Interior,SC06,8,13
+Carrizo,44916,Central Coast Interior,SC06,8,13
+Los Prietos,45203,Central Coast,SC07,8,13
+Big Sur,44302,Central Coast,SC07,8,13
+San Luis Obispo,44915,Central Coast,SC07,8,13
+Arroyo Seco,44301,Central Coast,SC07,8,13
+Las Tablas,44904,Central Coast,SC07,8,13
+Case Springs,45731,South Coast,SC08,8,13
+Malibu Hills,45433,South Coast,SC08,8,12
+Saugus,45412,South Coast,SC08,8,12
+Valley Center,45734,South Coast,SC08,8,13
+El Cariso,45619,South Coast,SC08,8,13
+Claremont,45443,South Coast,SC08,8,12
+Cheeseboro,45313,South Coast,SC08,8,12
+Devore,45113,South Coast,SC08,8,13
+Chuchupate,45302,Western Mountains,SC09,8,13
+Warm Springs,45426,Western Mountains,SC09,8,12
+Tanbark,45421,Western Mountains,SC09,8,13
+Rose Valley,45314,Western Mountains,SC09,8,13
+Ozena,45303,Western Mountains,SC09,8,13
+Mormon Rock,45114,Western Mountains,SC09,8,13
+Mill Creek ANF,45435,Western Mountains,SC09,8,12
+Chilao,45436,Western Mountains,SC09,8,12
+Fawnskin,45101,Eastern Mountains,SC10,8,12
+Converse,45105,Eastern Mountains,SC10,8,13
+Big Pine Flat,45102,Eastern Mountains,SC10,8,12
+Alpine,45701,Southern Mountains,SC11,8,12
+Descanso,45707,Southern Mountains,SC11,8,12
+Julian,45708,Southern Mountains,SC11,8,12
+Keenwild,45604,Southern Mountains,SC11,8,13
+Mt. Laguna,45709,Southern Mountains,SC11,8,12
+Oak Grove,45710,Southern Mountains,SC11,8,13
+Squaw Lake,45801,Lower Deserts,SC12,8,13
+Squaw Lake,45801,Eastern Deserts,SC13,8,13
+Rice Valley,45620,Eastern Deserts,SC13,8,13
+Mojave River Sink,45122,Central Mojave,SC14,8,13
+Horse Thief Spring,45129,Central Mojave,SC14,8,13
+Yucca Valley,45112,Central Mojave,SC14,8,12
+Acton,45438,Upper Deserts,SC15,8,12
+Poppy Park,45440,Upper Deserts,SC15,8,12
+Saddleback Butte,45444,Upper Deserts,SC15,8,12
+Oak Creek,44804,Northern Deserts,SC16,8,12
+Panamint,44806,Northern Deserts,SC16,8,13
+Horse Thief Spring,45129,Northern Deserts,SC16,8,13
+Benton,43708,Northern Deserts,SC16,8,13
+BONNERS FERRY,100101,Northern Idaho Panhandle,NR01,5,13
+PRIEST LAKE,100204,Northern Idaho Panhandle,NR01,5,13
+LIBBY,240107,NW Montana,NR02,5,13
+EUREKA RS,240110,NW Montana,NR02,5,13
+TROY RS,240112,NW Montana,NR02,5,13
+Pierce,100711,Southern Idaho Panhandle,NR03,5,13
+Shock,100606,Southern Idaho Panhandle,NR03,5,13
+Fishhook,100421,Southern Idaho Panhandle,NR03,5,13
+Kelly,100708,Southern Idaho Panhandle,NR03,5,13
+Blue Mtn (Missoula),241513,West Montana,NR04,5,13
+Hot Springs,241211,West Montana,NR04,5,13
+Plains,241206,West Montana,NR04,5,13
+Saint Regis,241302,West Montana,NR04,5,13
+Ninemile,241507,West Montana,NR04,5,12
+Pistol Creek,241405,West Montana,NR04,5,13
+Slate Creek,101037,Camas Prairie of Idaho,NR05,5,13
+Mission Creek,100901,Camas Prairie of Idaho,NR05,5,13
+Dent,100714,Camas Prairie of Idaho,NR05,5,13
+Fenn RS,101013,N. Central Idaho & Bitterroot/Sapphire Mountains,NR06,5,13
+Westfork,242907,N. Central Idaho & Bitterroot/Sapphire Mountains,NR06,5,13
+Red River,101045,N. Central Idaho & Bitterroot/Sapphire Mountains,NR06,5,13
+Powell,101031,N. Central Idaho & Bitterroot/Sapphire Mountains,NR06,5,13
+Sula,242905,N. Central Idaho & Bitterroot/Sapphire Mountains,NR06,5,13
+Smith Creek,242912,N. Central Idaho & Bitterroot/Sapphire Mountains,NR06,5,13
+Hungry Horse Rd,240217,Glacier NP & Wilderness Areas,NR07,5,13
+Lincoln,241904,Glacier NP & Wilderness Areas,NR07,5,13
+Benchmark,241901,Glacier NP & Wilderness Areas,NR07,5,13
+West Glacier,240207,Glacier NP & Wilderness Areas,NR07,5,13
+Condon,241502,Glacier NP & Wilderness Areas,NR07,5,13
+Polebridge,240210,Glacier NP & Wilderness Areas,NR07,5,12
+Pburg,243002,Southwest Montana West of the Continental Divide,NR08,5,13
+Lincoln,241904,Southwest Montana West of the Continental Divide,NR08,5,13
+Wise River,245405,Southwest Montana West of the Continental Divide,NR08,5,13
+Stinkwater,241518,Southwest Montana West of the Continental Divide,NR08,5,12
+Ennis,245501,Big Hole-SW Montana East of the Continental Divide,NR09,5,13
+Brenner,245409,Big Hole-SW Montana East of the Continental Divide,NR09,5,12
+Galena,243206,Big Hole-SW Montana East of the Continental Divide,NR09,5,12
+Antelope,245412,Big Hole-SW Montana East of the Continental Divide,NR09,5,12
+Wise River,245405,Big Hole-SW Montana East of the Continental Divide,NR09,5,13
+Gleason,241802,Northern Front Range,NR10,5,13
+St Mary,240303,Northern Front Range,NR10,5,13
+Browning,240307,Northern Front Range,NR10,5,13
+Deep Creek,240308,Northern Front Range,NR10,5,13
+Helena,241907,West Central Montana,NR11,5,12
+Dearborn,241910,West Central Montana,NR11,5,13
+South Fork Judith,242102,West Central Montana,NR11,5,12
+Little Snowy,242207,West Central Montana,NR11,5,12
+Elkhorn,243303,West Central Montana,NR11,5,12
+Hebgen,244603,South Central Montana & Yellowstone NP,NR12,5,12
+Timbercrest,245607,South Central Montana & Yellowstone NP,NR12,5,13
+Shenango,244601,South Central Montana & Yellowstone NP,NR12,5,12
+Fishtail,244902,South Central Montana & Yellowstone NP,NR12,5,13
+Main Boulder,244705,South Central Montana & Yellowstone NP,NR12,5,12
+Derby Mt.,244803,South Central Montana & Yellowstone NP,NR12,5,13
+King Coulee,240903,Northern Plains & Missouri River Breaks,NR13,5,12
+Bluff Creek,240902,Northern Plains & Missouri River Breaks,NR13,5,12
+Little Bull,240704,Northern Plains & Missouri River Breaks,NR13,5,12
+Rocky Boy,240601,Northern Plains & Missouri River Breaks,NR13,5,13
+Armells,242205,Northern Plains & Missouri River Breaks,NR13,5,12
+Horse Thief,243704,Northern Plains & Missouri River Breaks,NR13,5,13
+Pryor Mountain,245106,Southern Montana (Big Horn/Powder River),NR14,5,13
+Wolf Mountain,245105,Southern Montana (Big Horn/Powder River),NR14,5,13
+Fort Howes,245201,Southern Montana (Big Horn/Powder River),NR14,5,13
+Little Big Horn,245108,Southern Montana (Big Horn/Powder River),NR14,5,13
+Wild Horse,245109,Southern Montana (Big Horn/Powder River),NR14,5,12
+Horse Thief,243704,Southern Montana (Big Horn/Powder River),NR14,5,13
+Watford ND,321703,Northeast Montana & Northwest North Dakota,NR15,5,12
+Lostwood ND,320220,Northeast Montana & Northwest North Dakota,NR15,5,12
+Crosby,320101,Northeast Montana & Northwest North Dakota,NR15,5,12
+Poplar,242501,Northeast Montana & Northwest North Dakota,NR15,5,13
+Medicine Lake,241102,Northeast Montana & Northwest North Dakota,NR15,5,12
+Knife River ND,322701,Northeast Montana & Northwest North Dakota,NR15,5,12
+Cannonball Creek ND,244301,Southeastern Montana & Southwest North Dakota,NR16,5,12
+Sand Creek ND,323804,Southeastern Montana & Southwest North Dakota,NR16,5,13
+Knowlton,244102,Southeastern Montana & Southwest North Dakota,NR16,5,12
+Big Sheep,244002,Southeastern Montana & Southwest North Dakota,NR16,5,12
+Pine Hill,244201,Southeastern Montana & Southwest North Dakota,NR16,5,13
+Painted Canyon ND,322503,Southeastern Montana & Southwest North Dakota,NR16,5,13
+J. Clark Salyer,320401,Northeastern North Dakota,NR17,5,12
+Arrowwood,323536,Northeastern North Dakota,NR17,5,12
+Devil's Lake,321401,Northeastern North Dakota,NR17,5,13
+Hampden,320701,Northeastern North Dakota,NR17,5,12
+Sheyenne,324605,Southeastern North Dakota,NR18,5,12
+Arrowwood,323536,Southeastern North Dakota,NR18,5,12
+Knife River ND,322701,Southeastern North Dakota,NR18,5,12
+Baudette,210301,NW MN,EA01,3,13
+Little Fork,210405,NW MN,EA01,3,13
+Bemidji,210901,NW MN,EA01,3,13
+Agassiz,210801,NW MN,EA01,3,13
+Cass Lake,211604,NW MN,EA01,3,13
+Roseau,210203,NW MN,EA01,3,13
+Badoura,211502,NW MN,EA01,3,13
+Brainerd,212601,NW MN,EA01,3,13
+MN Valley,215601,SW MN/Nrn IA,EA02,3,12
+Sherburne,214001,SW MN/Nrn IA,EA02,3,13
+Carlos,214201,SW MN/Nrn IA,EA02,3,13
+Neal Smith,136101,SW MN/Nrn IA,EA02,3,13
+Big Stone NWR,213501,SW MN/Nrn IA,EA02,3,12
+Orr,210514,NE MN,EA03,3,13
+Hill City,211702,NE MN,EA03,3,13
+Seagull,210709,NE MN,EA03,3,13
+Moose Lake,211803,NE MN,EA03,3,13
+Hibbing,210512,NE MN,EA03,3,13
+Meander,210503,NE MN,EA03,3,13
+Ely MN,210509,NE MN,EA03,3,13
+Barnes,470202,N WI / Wrn UP Of MI,EA04,3,13
+Glidden,470302,N WI / Wrn UP Of MI,EA04,3,13
+Woodruff,471002,N WI / Wrn UP Of MI,EA04,3,13
+Minong,470703,N WI / Wrn UP Of MI,EA04,3,13
+Ladysmith,471601,N WI / Wrn UP Of MI,EA04,3,13
+Tomahawk,471801,N WI / Wrn UP Of MI,EA04,3,13
+Hayward,470804,N WI / Wrn UP Of MI,EA04,3,13
+MN Valley,215601,SE MN / Central WI,EA05,3,12
+Black River Falls,473901,SE MN / Central WI,EA05,3,13
+Rome (Saratoga),473501,SE MN / Central WI,EA05,3,13
+Gwinn,200703,NE WI / Ern UP,EA06,3,13
+Doe Lake,201002,NE WI / Ern UP,EA06,3,13
+Wausaukee,471301,NE WI / Ern UP,EA06,3,13
+Raco,201504,NE WI / Ern UP,EA06,3,13
+Baldwin,203802,Nrn LP Of MI,EA07,3,13
+Mio,202902,Nrn LP Of MI,EA07,3,13
+Bear,202010,Nrn LP Of MI,EA07,3,13
+Bailly,120201,NW IN / Srn LP Of MI,EA08,3,13
+Midewin Tall Grass,112001,NW IN / Srn LP Of MI,EA08,3,13
+Baldwin,203802,NW IN / Srn LP Of MI,EA08,3,13
+Ashland,232401,Srn IA / NW MO,EA09,3,13
+Neal Smith,136101,Srn IA / NW MO,EA09,3,13
+Chillicothe,231301,Srn IA / NW MO,EA09,3,13
+Desoto,135501,Srn IA / NW MO,EA09,3,13
+Midewin Tall Grass,112001,Nrn IL,EA10,3,13
+Bailly,120201,Nrn IL,EA10,3,13
+Bailly,120201,Nrn IN,EA11,3,13
+Midewin Tall Grass,112001,Nrn IN,EA11,3,13
+Ava FTS,238502,SW MO,EA12,3,13
+Ashland,232401,SW MO,EA12,3,13
+Doniphan FTS,239102,SE MO,EA13,3,13
+Sinkin FTS,236403,SE MO,EA13,3,13
+Dixon Springs,119501,Srn IL / Srn IN,EA14,3,13
+Tipsaw Lake,128905,Srn IL / Srn IN,EA14,3,13
+Hardin Ridge,125701,Srn IL / Srn IN,EA14,3,13
+Chillicothe,337301,NW OH,EA15,3,13
+Hillcrest WMA,460101,NW OH,EA15,3,13
+Dean,338401,SE OH / SW PA / NW WV,EA16,3,13
+Kingwood,460901,SE OH / SW PA / NW WV,EA16,3,13
+Hillcrest WMA,460101,SE OH / SW PA / NW WV,EA16,3,13
+Lakin,463001,SE OH / SW PA / NW WV,EA16,3,13
+Flatwoods,463301,SE OH / SW PA / NW WV,EA16,3,13
+Bee Mountain,463802,SE OH / SW PA / NW WV,EA16,3,13
+Grandview,464901,E WV,EA17,3,13
+Pipestem,465401,E WV,EA17,3,13
+Upper Tract,463501,E WV,EA17,3,13
+Kinzua,361231,NW PA / Wrn NY,EA18,3,13
+Kennedy Preserve,360331,NW PA / Wrn NY,EA18,3,13
+Old Mountain,361171,NW PA / Wrn NY,EA18,3,13
+Iroquois NWR,301101,NW PA / Wrn NY,EA18,3,13
+Blair Helibase,360131,Central PA / Central NY,EA19,3,13
+Old Mountain,361171,Central PA / Central NY,EA19,3,13
+Garden Hollow,360271,Central PA / Central NY,EA19,3,13
+Mt. Vanhoevenbe,300312,Upstate NY,EA20,3,13
+Schuyler Falls,300191,Upstate NY,EA20,3,13
+Brasher Falls,300892,Upstate NY,EA20,3,13
+Schroon Lake,300311,Upstate NY,EA20,3,13
+Wanakena,300891,Upstate NY,EA20,3,13
+Essex Junction,430501,VT / NH / Wrn ME,EA21,3,13
+Elmore,430601,VT / NH / Wrn ME,EA21,3,13
+White Mountain NF,270301,VT / NH / Wrn ME,EA21,3,13
+Nulhegan Basin,430402,VT / NH / Wrn ME,EA21,3,13
+Moosehorn NWR,170850,ME / NH Coast,EA22,3,13
+Rachel Carson NWR,171603,ME / NH Coast,EA22,3,12
+Mcfarland Hill,170791,ME / NH Coast,EA22,3,13
+Stonykill,305103,New England Metro,EA23,3,13
+Ningret NWR,370450,New England Metro,EA23,3,12
+Powellville,182201,SE Mid Atlantic,EA24,3,13
+Susquehanna,180701,SE Mid Atlantic,EA24,3,13
+Green Ridge,180201,SE Mid Atlantic,EA24,3,13
+Jackson,280291,SE Mid Atlantic,EA24,3,13
+Woodbine,280091,SE Mid Atlantic,EA24,3,13
+Blackwater NWR,182002,SE Mid Atlantic,EA24,3,12
+E.B. Forsythe NWR,281501,SE Mid Atlantic,EA24,3,13
+Cedarville,181510,SE Mid Atlantic,EA24,3,13
+Ellis,450130,W1,NW01,6,13
+Owl Mt,450211,W1,NW01,6,13
+Cougar,450117,W1,NW01,6,12
+Jefferson,450911,W1,NW01,6,12
+Sumas,451415,W1,NW01,6,13
+Gold Mt,451613,W1,NW01,6,12
+Finney,451509,W1,NW01,6,12
+Johnson,451611,W1,NW01,6,12
+Minot,450306,W1,NW01,6,13
+CedarCk,350215,W2,NW02,6,13
+Abernathy,451209,W2,NW02,6,13
+SFork,350216,W2,NW02,6,13
+Greenwater,451718,W2,NW02,6,13
+Canyon,451921,W2,NW02,6,12
+Log,350604,W2,NW02,6,13
+Rockhouse1,351710,W2,NW02,6,13
+Kosmos,451105,W2,NW02,6,13
+Yellowstone,352024,W3,NW03,6,13
+Wanderer's,350726,W3,NW03,6,13
+Signal,352816,W3,NW03,6,12
+Trout Ck,352552,W3,NW03,6,12
+High,352550,W3,NW03,6,12
+Goodwin,352545,W3,NW03,6,13
+RedBox,350718,W3,NW03,6,13
+Calvert,352919,W4,NW04,6,12
+Buckhorn,353230,W4,NW04,6,12
+Red,352920,W4,NW04,6,12
+Zim,353227,W4,NW04,6,12
+Evans,353228,W4,NW04,6,12
+Provolt,353120,W4,NW04,6,12
+Pebble,352554,W4,NW04,6,12
+Emigrant,352558,W4,NW04,6,12
+Quail2,352915,W4,NW04,6,12
+Grayback,452404,C1,NW05,6,13
+Peoh,452206,C1,NW05,6,13
+Dry Ck,452134,C1,NW05,6,12
+Sedge,452306,C1,NW05,6,13
+Wamic,350913,C2,NW06,6,13
+Mutton,350917,C2,NW06,6,12
+Cold Spr,352701,C2,NW06,6,13
+Haystack,352107,C2,NW06,6,13
+Board Hollow,352109,C2,NW06,6,13
+Colgate,352620,C2,NW06,6,13
+Cabin,353402,C3,NW07,6,13
+Parker,353344,C3,NW07,6,12
+Round,352605,C3,NW07,6,13
+Strawberry,353423,C3,NW07,6,13
+Hoyt,353343,C3,NW07,6,12
+Kramer,452040,E1,NW08,6,13
+NCSB,452030,E1,NW08,6,13
+Lost Lk,452029,E1,NW08,6,12
+Leecher Mtn,452020,E1,NW08,6,13
+Deer,453412,E2,NW09,6,12
+Gold,452510,E2,NW09,6,13
+Owl,452513,E2,NW09,6,12
+Kettle,452916,E2,NW09,6,12
+Escure,453601,E3,NW10,6,12
+Juniper,453201,E3,NW10,6,12
+Douglas,452601,E3,NW10,6,12
+Eden,351518,E4,NW11,6,13
+Harle,351502,E4,NW11,6,12
+Case,352329,E4,NW11,6,13
+Alder,453803,E4,NW11,6,13
+Sparta,352418,E4,NW11,6,12
+Roberts,351520,E4,NW11,6,12
+BlueC,352416,E4,NW11,6,12
+Fall,352327,E4,NW11,6,13
+Antelope,353524,E5,NW12,6,13
+Grassy,353612,E5,NW12,6,13
+Moon,353526,E5,NW12,6,12
+Wagontire,353512,E5,NW12,6,12
+Owyhee,353614,E5,NW12,6,12
+Lodgepole,101044,Payette,GB01,12,12
+Weiser,101108,Payette,GB01,12,12
+Catfish,101402,Payette,GB01,12,12
+Ski Hill,101223,Payette,GB01,12,12
+Snake,101109,Payette,GB01,12,12
+Teapot,101220,Payette,GB01,12,12
+Leadore,101312,Central Idaho,GB02,12,12
+Kriley Creek,101315,Central Idaho,GB02,12,12
+Skull,101311,Central Idaho,GB02,12,12
+Salmon,101310,Central Idaho,GB02,12,12
+Indianola,101303,Central Idaho,GB02,12,13
+Little Creek,101805,Central Idaho,GB02,12,12
+Ezra,101314,Central Idaho,GB02,12,12
+Sho-Pai,103211,SW Idaho,GB03,12,13
+Pole Creek,103210,SW Idaho,GB03,12,12
+Triangle,103208,SW Idaho,GB03,12,12
+Mountain Home,102709,SW Idaho,GB03,12,12
+Brace Flat,103207,SW Idaho,GB03,12,12
+Town Creek,101708,Boise Mtns,GB04,12,13
+Pine Creek Pass,101222,Boise Mtns,GB04,12,13
+Wagon Town,102712,Boise Mtns,GB04,12,13
+Fleck Summit,102802,Northern Sawtooth,GB05,12,12
+Stanley Ranger,101809,Northern Sawtooth,GB05,12,12
+North Fork,102903,Northern Sawtooth,GB05,12,12
+Horton Peak,101812,Northern Sawtooth,GB05,12,12
+Raft River,104104,Magic Valley,GB06,12,12
+Twin Butte,103209,Magic Valley,GB06,12,12
+Deer Haven,102711,Magic Valley,GB06,12,12
+Horse Butte,103205,Magic Valley,GB06,12,12
+Potter Butte,102907,Magic Valley,GB06,12,12
+Rock Lake,103403,Magic Valley,GB06,12,12
+Moberg Canyon,104103,Southern Sawtooth,GB07,12,12
+Goose Creek,104105,Southern Sawtooth,GB07,12,12
+Trail Gulch,104004,Southern Sawtooth,GB07,12,12
+Pole Canyon,103903,Upper Snake River,GB08,12,12
+Flint Creek,104203,Upper Snake River,GB08,12,13
+Crystal,103703,Upper Snake River,GB08,12,12
+Bull Springs,104006,Upper Snake River,GB08,12,12
+Grace,103902,Upper Snake River,GB08,12,12
+Diamond Flat,103904,Eastern Idaho Highlands,GB09,12,13
+3 Mile,102004,Eastern Idaho Highlands,GB09,12,13
+Moody,102301,Eastern Idaho Highlands,GB09,12,12
+Raspberry,481307,Western Wyoming,GB10,12,12
+Burro Hill,480707,Western Wyoming,GB10,12,12
+Coyote Meadows,480709,Western Wyoming,GB10,12,13
+Hoback,481302,Western Wyoming,GB10,12,12
+Snider Basin,481306,Western Wyoming,GB10,12,12
+Grand Teton,480708,Western Wyoming,GB10,12,13
+Bridgeport,43702,Southern Sierra Front,GB11,12,12
+Knox 2,260117,Southern Sierra Front,GB11,12,13
+Markleeville,42802,Southern Sierra Front,GB11,12,12
+Walker,43707,Southern Sierra Front,GB11,12,12
+Fish Springs,261204,Northern Sierra Front,GB12,12,12
+Doyle,40724,Northern Sierra Front,GB12,12,12
+Dog Valley,41302,Northern Sierra Front,GB12,12,12
+Galena,260108,Northern Sierra Front,GB12,12,12
+Desert Springs,260114,Northern Sierra Front,GB12,12,12
+Dead Camel,260701,Lahontan Basin,GB13,12,12
+Red Butte,260504,Lahontan Basin,GB13,12,12
+Double H,260207,NW Nevada,GB14,12,12
+Majuba,260208,NW Nevada,GB14,12,12
+Morey Creek,260204,NW Nevada,GB14,12,12
+Dry Canyon,260203,NW Nevada,GB14,12,12
+Juniper Springs,260112,NW Nevada,GB14,12,12
+Bluewing,260202,NW Nevada,GB14,12,12
+Texas Spring,260206,NW Nevada,GB14,12,12
+Desatoya,260503,Central NV Mountains,GB15,12,12
+Austin,260501,Central NV Mountains,GB15,12,12
+Coils Creek,260603,Central NV Mountains,GB15,12,12
+Combs Canyon,260601,Central NV Mountains,GB15,12,12
+Quima Peak,260810,Central NV Desert,GB16,12,13
+Pancake,261404,Central NV Desert,GB16,12,13
+Antelope Lake,260310,West Elko,GB17,12,12
+Beacon Light,260505,West Elko,GB17,12,12
+Stag Mountain,260315,Jarbidge,GB18,12,13
+Rock Spring Creek,260309,Jarbidge,GB18,12,12
+Long Hollow,260305,Jarbidge,GB18,12,12
+Spruce Mountain,260306,Ruby,GB19,12,12
+Crane Springs,260314,Ruby,GB19,12,13
+Spring Gulch,260308,Ruby,GB19,12,12
+Currant Creek,261406,Ely North,GB20,12,12
+Cedar Pass,260805,Ely North,GB20,12,12
+Cattle Camp,260807,Ely North,GB20,12,12
+Alligator Ridge,260804,Ely North,GB20,12,12
+Kane Springs,261604,Ely South,GB21,12,12
+Coyote Wash,261603,Ely South,GB21,12,12
+Immigration Wash,261608,Ely South,GB21,12,12
+Buddy Adams,261408,Amargosa,GB22,12,12
+Kyle Canyon,261702,Spring Mountain,GB23,12,13
+Mountain Springs,261708,Spring Mountain,GB23,12,13
+Red Rock,261705,Southern NV Desert,GB24,12,13
+Rosebud,420914,NW Utah,GB25,12,12
+Aragonite,420911,NW Utah,GB25,12,12
+Cedar Mountain,420901,NW Utah,GB25,12,12
+Vernon,420908,NW Utah,GB25,12,12
+Clifton Flat,420915,NW Utah,GB25,12,12
+Bues Canyon,420403,NW Utah,GB25,12,13
+Rays Valley,421103,Uinta-Wasatch,GB26,12,13
+Norway Flat,420706,Uinta-Wasatch,GB26,12,13
+Otter Creek,420912,Uinta-Wasatch,GB26,12,12
+Pleasant Grove,421101,Uinta-Wasatch,GB26,12,12
+Tule Valley,421806,Central Utah,GB27,12,12
+Mud Spring,421502,Central Utah,GB27,12,12
+Sevier Reservoir,421501,Central Utah,GB27,12,12
+Horse Hollow,421807,Fishlake-Henry Mountain,GB28,12,12
+Lost Creek,421905,Fishlake-Henry Mountain,GB28,12,12
+Larb Hollow,422610,Fishlake-Henry Mountain,GB28,12,13
+Henry Mountain,422611,Fishlake-Henry Mountain,GB28,12,12
+Fort Duchesne,421415,Uinta Basin,GB29,12,12
+Upper PR Canyon,421406,Uinta Basin,GB29,12,12
+Wildhorse,421416,Uinta Basin,GB29,12,12
+Horse Ridge,421305,Uinta Basin,GB29,12,13
+Winter Ridge,421407,Uinta Basin,GB29,12,12
+Five Mile,421304,Uinta Basin,GB29,12,13
+Yellowstone,421301,Uinta Basin,GB29,12,13
+Joes Valley,421602,Manti,GB30,12,12
+Bryson,422102,Castle,GB31,12,12
+Bruin Point,421702,Castle,GB31,12,12
+McCook,421405,Castle,GB31,12,12
+Flat Top,422002,Castle,GB31,12,12
+Big Indian,422711,Canyon,GB32,12,12
+Kane Gulch,422712,Canyon,GB32,12,12
+North Long Point,422710,Canyon,GB32,12,12
+Brimstone,422203,SW Utah Desert,GB33,12,12
+Enterprise,422803,SW Utah Desert,GB33,12,13
+Jensen Spring,422502,SW Utah Desert,GB33,12,12
+Buck Flat,422606,Dixie-Bryce,GB34,12,13
+Cottonwood,422503,Dixie-Bryce,GB34,12,12
+Tom Best,422608,Dixie-Bryce,GB34,12,13
+Assay Bench,422604,Dixie-Bryce,GB34,12,13
+Lava Point,422807,Dixie-Bryce,GB34,12,12
+Bryce Canyon,422609,Dixie-Bryce,GB34,12,13
+Buckskin,20224,AZ Strip-Monuments,GB35,12,13
+Tweedy,20109,AZ Strip-Monuments,GB35,12,13
+Olaf,20108,AZ Strip-Monuments,GB35,12,13
+Logan,20107,AZ Strip-Monuments,GB35,12,13
+Badger Spring,422806,AZ Strip-Monuments,GB35,12,12
+Blackrock,20114,AZ Strip-Monuments,GB35,12,12
+White Reef,422805,AZ Strip-Monuments,GB35,12,13
+Eagle,480214,Shoshone,RM01,7,12
+Elkhorn,481410,Shoshone,RM01,7,12
+Crandall,480213,Big Horn Basin,RM02,7,13
+Grass Creek,480804,Big Horn Basin,RM02,7,12
+Hyatt High,480307,Big Horn Basin,RM02,7,12
+Leigh Creek,480906,Big Horn Basin,RM02,7,13
+Rattlesnake,480212,Big Horn Basin,RM02,7,12
+Split Rock,480904,Big Horn Basin,RM02,7,12
+Burgess,480403,Big Horn Mountains,RM03,7,13
+Mill Creek,480306,Big Horn Mountains,RM03,7,12
+School House,481002,Big Horn Mountains,RM03,7,12
+Leigh Creek,480906,Big Horn Mountains,RM03,7,13
+Bear Lodge,480605,Powder River Basin,RM04,7,12
+Echeta,480501,Powder River Basin,RM04,7,12
+Rochelle Hills,480502,Powder River Basin,RM04,7,13
+Indian Butte,390901,Powder River Basin,RM04,7,12
+Baker Park,392606,Black Hills North,RM05,7,13
+Nemo,392506,Black Hills North,RM05,7,12
+Rushmore,392603,Black Hills North,RM05,7,13
+Red Canyon,395105,Black Hills South,RM06,7,12
+WICA Elk Mountain,393505,Black Hills South,RM06,7,13
+Custer West,393506,Black Hills South,RM06,7,13
+Anderson Ridge,481903,Southwest Wyoming,RM07,7,12
+Snow Springs Creek,481904,Southwest Wyoming,RM07,7,12
+Muddy Creek,481801,Southwest Wyoming,RM07,7,12
+Camp Creek,482010,Wind River Basin/Casper Mountain,RM08,7,12
+Casper Mountain,481502,Wind River Basin/Casper Mountain,RM08,7,12
+Fales Rock,481504,Wind River Basin/Casper Mountain,RM08,7,13
+Wind River,481411,Wind River Basin/Casper Mountain,RM08,7,13
+Poker Creek,481003,Wind River Basin/Casper Mountain,RM08,7,12
+Dodge Creek,482106,Laramie Mountains,RM09,7,12
+Ester Brook,482102,Laramie Mountains,RM09,7,12
+Cow Creek,482011,Northwest Colorado Plateau,RM10,7,12
+Great Divide,50106,Northwest Colorado Plateau,RM10,7,12
+Ladore,50104,Northwest Colorado Plateau,RM10,7,13
+Porcupine,50406,Northern Colorado Mountains,RM11,7,12
+Dead Horse,51404,Northern Colorado Mountains,RM11,7,12
+Willow Creek,50304,Northern Colorado Mountains,RM11,7,12
+Sawmill,482105,Northern Colorado Mountains,RM11,7,12
+Sugarloaf,50604,Northern Front Range Foothills,RM12,7,13
+Redstone,50508,Northern Front Range Foothills,RM12,7,12
+Red Feather,50505,Northern Front Range Mountains,RM13,7,13
+Estes Park,50507,Northern Front Range Mountains,RM13,7,13
+Bailey,52001,Northern Front Range Mountains,RM13,7,13
+Pickle Gulch,51901,Northern Front Range Mountains,RM13,7,13
+Dragon Road,51407,Lower Colorado River Plateau,RM14,7,13
+Pinto,51402,Lower Colorado River Plateau,RM14,7,13
+Demaree,51507,Lower Colorado River Plateau,RM14,7,12
+Little Delores,52410,Lower Colorado River Plateau,RM14,7,12
+Hunter Creek,51406,Lower Colorado River Plateau,RM14,7,13
+Rifle,51504,Lower Colorado River Plateau,RM14,7,12
+Pine Ridge,52407,Lower Colorado River Plateau,RM14,7,12
+Crown,51506,Grand Mesa/White River,RM15,7,12
+Dowd Jct,51606,Grand Mesa/White River,RM15,7,12
+Gypsum,51607,Grand Mesa/White River,RM15,7,13
+Soda Creek,51703,Grand Mesa/White River,RM15,7,12
+Storm King,51508,Grand Mesa/White River,RM15,7,12
+Black Canyon,53806,Uncompahgre,RM16,7,12
+Carpenter Ridge,53808,Uncompahgre,RM16,7,12
+Cottonwood Basin,53805,Uncompahgre,RM16,7,12
+Dominguez,52409,Uncompahgre,RM16,7,12
+Jay,52704,Uncompahgre,RM16,7,12
+Sanborn,53804,Uncompahgre,RM16,7,12
+Nulca,53807,Uncompahgre,RM16,7,12
+Huntsman Mesa,52813,Gunnison/Pike,RM17,7,12
+Lujan,54702,Gunnison/Pike,RM17,7,12
+Red Deer,52902,Gunnison/Pike,RM17,7,13
+Taylor Park,52812,Gunnison/Pike,RM17,7,12
+Cheeseman,53102,Central Front Range,RM18,7,13
+Copper Gulch,53904,Central Front Range,RM18,7,12
+Fort Carson,53603,Central Front Range,RM18,7,12
+Lake George,53002,Central Front Range,RM18,7,12
+Chapin,55704,Ute Mountain/Mesa Verde,RM19,7,12
+Mesa Mountain,55805,Ute Mountain/Mesa Verde,RM19,7,13
+Salter,55205,Ute Mountain/Mesa Verde,RM19,7,13
+Bighorn,56005,San Juan,RM20,7,12
+Blue Park,55305,San Juan,RM20,7,12
+Sand Dunes,55503,San Luis Valley/Great Sand Dunes,RM21,7,13
+Bighorn,56005,San Luis Valley/Great Sand Dunes,RM21,7,12
+Four Mile,53903,Southern Front Range,RM22,7,13
+Bosque (Cuchara),56203,Southern Front Range,RM22,7,12
+Copper Gulch,53904,Southern Front Range,RM22,7,12
+Bear Creek,391201,Central South Dakota,RM23,7,12
+Huron,393101,Central South Dakota,RM23,7,12
+Fort Pierre,393801,Central South Dakota,RM23,7,12
+Magpie,395601,Central South Dakota,RM23,7,13
+Lake Andes,395901,Central South Dakota,RM23,7,12
+Kincan,250203,SW South Dakota/NE National Forest,RM24,7,13
+Pinnacles,392602,SW South Dakota/NE National Forest,RM24,7,13
+Agate,250105,NE Colorado/SE Wyoming/W Nebraska,RM25,7,13
+Scotts Bluff,251905,NE Colorado/SE Wyoming/W Nebraska,RM25,7,12
+Valentine,250402,Central Nebraska,RM26,7,13
+Bessey,252402,Central Nebraska,RM26,7,12
+Pinion Canyon,56202,SE Colorado/W Kansas,RM27,7,13
+Cimarron,148601,SE Colorado/W Kansas,RM27,7,13
+Stafford,146501,Central-E Kansas,RM28,7,12
+Kirwin,140401,Central-E Kansas,RM28,7,12
+Potowatomi,142301,Central-E Kansas,RM28,7,12
