@@ -1,14 +1,32 @@
 import typing as T
+from copy import deepcopy
 from datetime import date, datetime, timedelta
 
 import boto3
 
 from wims_feed.constants import STN_LABELS
-from wims_feed.helpers import enumerate_dates, wims_to_list
+from wims_feed.helpers import enumerate_dates, rnd_wims, wims_to_list
 from wims_feed.settings import Settings
 
 settings = Settings()
 S3 = boto3.client("s3")
+
+
+def remove_extra_nfdrs(stn_data: T.Dict[str, T.Dict]) -> T.Dict:
+    copy_dict = deepcopy(stn_data)
+    for ep in ["nfdrs", "nfdrs_obs"]:
+        if stn_data[ep]["row"]:
+            dt = None
+            idxs = []
+            for idx, ob in enumerate(stn_data[ep]["row"]):
+                if ob["nfdr_dt"] == dt:
+                    idxs.append(idx)
+                dt = ob["nfdr_dt"]
+            if idxs:
+                for idx in sorted(idxs, reverse=True):
+                    del copy_dict[ep]["row"][idx]
+
+    return copy_dict
 
 
 def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
@@ -28,6 +46,8 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     # Make sure data from endpoints are list, not dict. Happens when endpoint
     # response has only *one* ob/fcst
     stn_data = wims_to_list(stn_data)
+
+    stn_data = remove_extra_nfdrs(stn_data)
 
     ###########################################################################
     #  Weather forecast processing                                            #
@@ -52,11 +72,11 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     for day in pfcst:
         out_stn[day["fcst_dt"][:-5]].extend(
             [
-                day["rh_max"],
-                day["temp_min"],
-                day["rh_min"],
-                day["temp_max"],
-                day["wind_sp"],
+                day.get("rh_max", "-99"),
+                day.get("temp_min", "-99"),
+                day.get("rh_min", "-99"),
+                day.get("temp_max", "-99"),
+                day.get("wind_sp", "-99"),
             ]
         )
 
@@ -83,11 +103,11 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     for day in obs:
         out_stn[day["obs_dt"][:-5]].extend(
             [
-                day["rh_max"],
-                day["temp_min"],
-                day["rh_min"],
-                day["temp_max"],
-                day["wind_sp"],
+                day.get("rh_max", "-99"),
+                day.get("temp_min", "-99"),
+                day.get("rh_min", "-99"),
+                day.get("temp_max", "-99"),
+                day.get("wind_sp", "-99"),
             ]
         )
 
@@ -106,12 +126,12 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     for day in nfdrs_obs:
         out_stn[day["nfdr_dt"][:-5]].extend(
             [
-                str(round(float(day["bi"]))),
-                str(round(float(day["ec"]))),
-                str(round(float(day["ic"]))),
-                str(round(float(day["ten_hr"]))),
-                str(round(float(day["hu_hr"]))),
-                str(round(float(day["th_hr"]))),
+                rnd_wims(day.get("bi", "-99")),
+                rnd_wims(day.get("ec", "-99")),
+                rnd_wims(day.get("ic", "-99")),
+                rnd_wims(day.get("ten_hr", "-99")),
+                rnd_wims(day.get("hu_hr", "-99")),
+                rnd_wims(day.get("th_hr", "-99")),
             ]
         )
 
@@ -129,12 +149,12 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
     for day in nfdrs_fcst:
         out_stn[day["nfdr_dt"][:-5]].extend(
             [
-                str(round(float(day["bi"]))),
-                str(round(float(day["ec"]))),
-                str(round(float(day["ic"]))),
-                str(round(float(day["ten_hr"]))),
-                str(round(float(day["hu_hr"]))),
-                str(round(float(day["th_hr"]))),
+                rnd_wims(day.get("bi", "-99")),
+                rnd_wims(day.get("ec", "-99")),
+                rnd_wims(day.get("ic", "-99")),
+                rnd_wims(day.get("ten_hr", "-99")),
+                rnd_wims(day.get("hu_hr", "-99")),
+                rnd_wims(day.get("th_hr", "-99")),
             ]
         )
 
@@ -162,7 +182,7 @@ def get_stn_headers(stn_data) -> T.List[str]:
             ]
             break
         # This just makes sure we write headers from at least 1 endpoint
-        except KeyError:
+        except (KeyError, IndexError):
             continue
     return headers
 
@@ -204,52 +224,35 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
     return list(date_strs.difference(wims_dates))
 
 
-# def write_data_to_file(stns: T.List[T.Dict], file_path: str):
-#     """Legacy forecast system expects data in an exacting, painful format"""
-#     with open(file_path, "w") as f:
-#         for stn in stns:
-#             # Write header row then remove from stn
-#             f.write("\t".join(stn["headers"]) + "\n")
-#             del stn["headers"]
-#             # Write date row
-#             sorted_dts = sorted(stn.keys())
-#             f.write(f"Fcst Dy\t" + "\t".join(sorted_dts) + "\n")
-#             # 11 rows for all the variables
-#             for i in range(11):
-#                 row_vals = [stn[dt][i] for dt in sorted_dts]
-#                 f.write(
-#                     f"{STN_LABELS['Fcst Dy'][i]}\t"
-#                     + "\t".join(row_vals)
-#                     + "\n"
-#                 )
-#             f.write("\n")
-
-
 def write_data_to_file(stns: T.List[T.Dict], file_path: str):
     """With justifying to resemble the original"""
     with open(file_path, "w") as f:
         for stn in stns:
-            # Write header row
-            f.write(
-                f"{stn['headers'][0]:<20}{stn['headers'][1]:<8}{stn['headers'][2]:<8}{stn['headers'][3]:<9}{stn['headers'][4]:<10}{stn['headers'][5]:<5}\n"
-            )
-            del stn["headers"]
-
-            # Write date row
-            sorted_dts = sorted(stn.keys())
-            f.write(
-                f"{'Fcst Dy':<20}"
-                + "".join(f"{x:<9}" for x in sorted_dts)
-                + "\n"
-            )
-
-            # Write variable rows
-            # 11 rows for all the variables
-            for i in range(11):
-                row_vals = [stn[dt][i] for dt in sorted_dts]
+            try:
+                # Write header row
                 f.write(
-                    f"{STN_LABELS['Fcst Dy'][i]:<22}"
-                    + "".join(f"{x:<9}" for x in row_vals)
+                    f"{stn['headers'][0]:<20}{stn['headers'][1]:<8}{stn['headers'][2]:<8}{stn['headers'][3]:<9}{stn['headers'][4]:<10}{stn['headers'][5]:<5}\n"
+                )
+                del stn["headers"]
+
+                # Write date row
+                sorted_dts = sorted(stn.keys())
+                f.write(
+                    f"{'Fcst Dy':<20}"
+                    + "".join(f"{x:<9}" for x in sorted_dts)
                     + "\n"
                 )
-            f.write("\n")
+
+                # Write variable rows
+                # 11 rows for all the variables
+                for i in range(11):
+                    row_vals = [stn[dt][i] for dt in sorted_dts]
+                    f.write(
+                        f"{STN_LABELS['Fcst Dy'][i]:<22}"
+                        + "".join(f"{x:<9}" for x in row_vals)
+                        + "\n"
+                    )
+                f.write("\n")
+            # This happens when we don't have any station headers and all -99s
+            except IndexError:
+                continue

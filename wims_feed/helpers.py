@@ -17,6 +17,16 @@ def wims_to_list(
     """The WIMS endpoints can return dict instead of list for queries with
     results of len(1). We need everything to stay pretty as list"""
     for d in stn_data:
-        if not isinstance(stn_data[d]["row"], list):
-            stn_data[d]["row"] = [stn_data[d]["row"]]
+        # This is to handle those stations that might not report for an endpoint
+        # Specifically, some currently don't report for nfdrs
+        if stn_data[d] == None:
+            stn_data[d] = {"row": []}
+        else:
+            if not isinstance(stn_data[d]["row"], list):
+                stn_data[d]["row"] = [stn_data[d]["row"]]
     return stn_data
+
+
+def rnd_wims(v: str) -> str:
+    "Dumbest helper to assist with rounding nfdrs vals"
+    return str(round(float(v)))

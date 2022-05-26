@@ -1,4 +1,5 @@
 import asyncio
+import json
 import logging
 import typing as T
 
@@ -44,12 +45,18 @@ async def worker(event, context):
         # Process only the data we need
         processed_data = process_data(raw_data, stn)
 
+        if not processed_data["headers"]:
+            logger.warn(
+                f"No data found for {stn['station_id']}. This station will not be written to file."
+            )
         # Add to stn list
         final_data.append(processed_data)
 
     logger.info(
         f"Processing complete!. Writing data to file and making pretty."
     )
+    with open("test.json", "w") as f:
+        json.dump(final_data, f)
     # Write data to file
     write_data_to_file(final_data, f"/tmp/{settings.output_path}")
 
