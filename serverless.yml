@@ -71,7 +71,6 @@ resources:
               Principal: '*'
               Action:
                 - 's3:GetObject'
-                - 's3:ListBucket'
               Resource: arn:aws:s3:::predictive-services-open-data-us-west-2/*
         Bucket:
           Ref: PublicDataBucket
