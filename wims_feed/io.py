@@ -46,16 +46,14 @@ async def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
     return stn_data
 
 
-def sync_to_s3(file_path: str) -> T.Dict[str, str]:
+def sync_to_s3(file_path: str, bucket: str, out_path: str) -> T.Dict[str, str]:
     """Upload final txt file to S3 and provide a helpful msg about sync status"""
     try:
         S3 = boto3.client("s3")
-        S3.upload_fileobj(
-            file_path, settings.bucket_name, settings.output_path
-        )
+        S3.upload_fileobj(file_path, bucket, out_path)
         msg = {
             "status": "success",
-            "desc": f"{settings.output_path} synced successfully!",
+            "desc": f"{out_path} synced successfully!",
         }
     except Exception as e:
         msg = {

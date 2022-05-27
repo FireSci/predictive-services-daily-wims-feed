@@ -17,6 +17,7 @@ async def worker(event, context):
     """Main worker"""
 
     BASE: str = "https://famprod.nwcg.gov/wims/xsql"
+    error_stns = []
 
     # Get list of stns
     stns: T.List[T.Dict[str, T.Any]] = get_station_list(settings.station_path)
@@ -47,6 +48,7 @@ async def worker(event, context):
             logger.warn(
                 f"No data found for {stn['station_id']}. This stn will not be written to file."
             )
+            error_stns.append(stn["station_id"])
         # Add to stn list
         final_data.append(processed_data)
 
@@ -55,10 +57,23 @@ async def worker(event, context):
     write_data_to_file(final_data, f"/tmp/{settings.output_path}")
 
     # Upload file to S3
-    logger.info(f"Uploading to S3!")
+    logger.info(f"Uploading to S3...")
     with open(f"/tmp/{settings.output_path}", "rb") as f:
-        msg = sync_to_s3(f)
+        msg = sync_to_s3(f, settings.bucket_name, settings.output_path)
     logger.info(f"{settings.output_path} was successfully synced!")
+
+    # Write and upload errors to S3
+    logger.info(f"Writing errors file...")
+    if error_stns:
+        error_path = "error_stns.txt"
+        with open(f"/tmp/{error_path}", "w") as f:
+            for stn in error_stns:
+                f.write(f"{stn}\n")
+        with open(f"/tmp/{error_path}", "rb") as f:
+            msg = sync_to_s3(f, settings.bucket_name, error_path)
+        logger.info(f"{error_path} was successfully synced!")
+
+    logger.info(f"Pipeline complete! Check S3 for details.")
 
     return msg
 
