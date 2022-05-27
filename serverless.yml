@@ -47,8 +47,8 @@ functions:
     # Handler is where our code lives
     handler: wims_feed.handler.run
     events:
-      # Invoke Lambda every day at 2200Z
-      - schedule: cron(30 22 * * ? *)
+      # Invoke Lambda every day at 2330z
+      - schedule: cron(30 23 * * ? *)
 
 resources:
   Resources:
@@ -71,6 +71,7 @@ resources:
               Principal: '*'
               Action:
                 - 's3:GetObject'
+                - 's3:ListBucket'
               Resource: arn:aws:s3:::predictive-services-open-data-us-west-2/*
         Bucket:
           Ref: PublicDataBucket

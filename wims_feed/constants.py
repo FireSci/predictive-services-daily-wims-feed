@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+# Left most column labels for output file
 STN_LABELS = {
     "Fcst Dy": [
         "Max RH (%)",
@@ -16,7 +17,7 @@ STN_LABELS = {
     ]
 }
 
-
+# Dates for querying WIMS endpoints
 DATES = {
     "nfdrs": {
         "s": datetime.utcnow(),

@@ -1,6 +1,5 @@
 import asyncio
 import json
-import logging
 import typing as T
 
 import aiohttp
@@ -9,47 +8,46 @@ import xmltodict
 
 from wims_feed.settings import Settings
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
 settings = Settings()
 
 
 def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
-    """Loads station data in memory"""
+    """Loads json stn data in memory from top-level dir"""
     with open(file_path) as json_file:
         return json.load(json_file)
 
 
 async def get_wims_data(url, session):
     """Async request to WIMs for a particular url"""
-    try:
-        async with session.get(url=url) as response:
-            r = await response.read()
-            return xmltodict.parse(r)
-
-    except Exception as e:
-        logger.error(f"Unable to get url {url} due to {e.__class__}.")
+    async with session.get(url=url) as response:
+        r = await response.read()
+        # Immediately get out of xml land
+        return xmltodict.parse(r)
 
 
 async def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
-    """Given a list of URLs for a particular station, returns data from WIMS.
+    """Given a list of URLs for a particular stn, returns data from WIMS.
     This should return values for all endpoints even if its just None"""
     stn_data: T.Dict = {}
-    # This is a context manager for establishing a session. Under the hood, there
-    # is a lot of connection management stuff going on. Outta sight, outta mind
+
+    # Async obtain a 'batch' of stn data representing all four WIMS responses
     async with aiohttp.ClientSession() as session:
-        # This will be a 'batch' representing all four api responses for a stn
         url_resps: T.List[T.Dict] = await asyncio.gather(
             *[get_wims_data(url, session) for url in urls]
         )
+
+    # Make sure we don't overwrite nfdrs forecast with obs (same key)
     for resp in url_resps:
         if "nfdrs" in stn_data and "nfdrs" in resp:
             resp["nfdrs_obs"] = resp.pop("nfdrs")
+        # Unpack everything to stn_data dict
         stn_data = {**stn_data, **resp}
+
     return stn_data
 
 
 def sync_to_s3(file_path: str) -> T.Dict[str, str]:
+    """Upload final txt file to S3 and provide a helpful msg about sync status"""
     try:
         S3 = boto3.client("s3")
         S3.upload_fileobj(
@@ -64,4 +62,5 @@ def sync_to_s3(file_path: str) -> T.Dict[str, str]:
             "status": "failure",
             "desc": str(e),
         }
+
     return msg

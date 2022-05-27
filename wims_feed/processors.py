@@ -2,27 +2,36 @@ import typing as T
 from copy import deepcopy
 from datetime import date, datetime, timedelta
 
-import boto3
-
 from wims_feed.constants import STN_LABELS
 from wims_feed.helpers import enumerate_dates, rnd_wims, wims_to_list
 from wims_feed.settings import Settings
 
 settings = Settings()
-S3 = boto3.client("s3")
 
 
 def remove_extra_nfdrs(stn_data: T.Dict[str, T.Dict]) -> T.Dict:
+    """Returns a copy of our stn data with extra data for all days removed. Some
+    stns report values for multiple fuel models each day, even in cases where
+    only the RS time is obtained (nfdrs_obs). Here we iterate through the days
+    and remove any duplicates, taking only the first ob we find for that day,
+    regardless of Y fuel model."""
+
+    # Iterate through `stn_data` but do operations on `copy_dict` so we clone it
     copy_dict = deepcopy(stn_data)
+
     for ep in ["nfdrs", "nfdrs_obs"]:
+        # Only do if we have a list of obs
         if stn_data[ep]["row"]:
             dt = None
             idxs = []
+            # Find dates that match previous and grab respective indices
             for idx, ob in enumerate(stn_data[ep]["row"]):
                 if ob["nfdr_dt"] == dt:
                     idxs.append(idx)
                 dt = ob["nfdr_dt"]
+            # If we have indices to delete, do it
             if idxs:
+                # sort and reverse list to delete idxs without affecting others
                 for idx in sorted(idxs, reverse=True):
                     del copy_dict[ep]["row"][idx]
 

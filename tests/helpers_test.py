@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from wims_feed.helpers import enumerate_dates, wims_to_list
+from wims_feed.helpers import enumerate_dates, rnd_wims, wims_to_list
 
 
 def test_enumerate_dates():
@@ -41,3 +41,9 @@ def test_wims_to_list_bad():
     assert isinstance(out["nfdrs"], dict)
     assert isinstance(out["nfdrs"]["row"], list)
     assert isinstance(out["nfdrs"]["row"][0], dict)
+
+
+def test_rnd_wims():
+    v = rnd_wims("98.99")
+    assert v == "99"
+    assert isinstance(v, str)
