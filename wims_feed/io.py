@@ -104,7 +104,7 @@ def send_email(email_body: T.Dict[str, T.Dict[str, str]]) -> None:
             },
             "Subject": {
                 "Charset": CHARSET,
-                "Data": f"{datetime.utcnow().strftime('%Y%m%d')} WIMS Status",
+                "Data": f"{datetime.utcnow().strftime('%m-%d-%Y')} WIMS Ingest Pipeline Status",
             },
         },
         Source="josh@firesci.io",
