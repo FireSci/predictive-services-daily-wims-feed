@@ -61,6 +61,8 @@ resources:
           IndexDocument: ndfd_predserv_fcst.txt
         VersioningConfiguration:
           Status: Enabled
+
+
     PublicDataBucketPolicy:
       Type: 'AWS::S3::BucketPolicy'
       Properties:

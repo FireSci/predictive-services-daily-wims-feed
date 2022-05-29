@@ -36,3 +36,23 @@ DATES = {
         "e": datetime.utcnow(),
     },
 }
+
+CSV_HEADERS = {
+    "FCST_DY",
+    "STA_ID",
+    "LATITUDE",
+    "LONGITUDE",
+    "ISSUE_DT",
+    "ISSUE_TIME",
+    "RH_MAX",
+    "TEMP_MIN",
+    "RH_MIN",
+    "TEMP_MAX",
+    "WIND_SP",
+    "BI",
+    "EC",
+    "IC",
+    "TEN_HR",
+    "HU_HR",
+    "TH_HR",
+}

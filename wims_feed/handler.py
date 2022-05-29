@@ -4,7 +4,11 @@ import typing as T
 
 from wims_feed.constants import DATES
 from wims_feed.io import get_station_data, get_station_list, sync_to_s3
-from wims_feed.processors import process_data, write_data_to_file
+from wims_feed.processors import (
+    process_data,
+    write_data_to_csv,
+    write_data_to_file,
+)
 from wims_feed.settings import Settings
 
 logger = logging.getLogger(__name__)
@@ -62,6 +66,10 @@ async def worker(event, context):
         msg = sync_to_s3(f, settings.bucket_name, settings.output_path)
     logger.info(f"{settings.output_path} was successfully synced!")
 
+    ###########################################################################
+    # Added below later...just going to keep these separate                   #
+    ###########################################################################
+
     # Write and upload errors to S3
     logger.info(f"Writing errors file...")
     if error_stns:
@@ -72,6 +80,9 @@ async def worker(event, context):
         with open(f"/tmp/{error_path}", "rb") as f:
             msg = sync_to_s3(f, settings.bucket_name, error_path)
         logger.info(f"{error_path} was successfully synced!")
+
+    # Write and upload csv to S3
+    write_data_to_csv(final_data, f"/tmp/{ndfd_predserv_fcst.csv}")
 
     logger.info(f"Pipeline complete! Check S3 for details.")
 

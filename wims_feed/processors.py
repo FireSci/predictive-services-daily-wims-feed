@@ -1,8 +1,9 @@
+import csv
 import typing as T
 from copy import deepcopy
 from datetime import date, datetime, timedelta
 
-from wims_feed.constants import STN_LABELS
+from wims_feed.constants import CSV_HEADERS, STN_LABELS
 from wims_feed.helpers import enumerate_dates, rnd_wims, wims_to_list
 from wims_feed.settings import Settings
 
@@ -233,7 +234,7 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
     return list(date_strs.difference(wims_dates))
 
 
-def write_data_to_file(stns: T.List[T.Dict], file_path: str):
+def write_data_to_file(stns: T.List[T.Dict], file_path: str) -> None:
     """With justifying to resemble the original"""
     with open(file_path, "w") as f:
         for stn in stns:
@@ -263,5 +264,16 @@ def write_data_to_file(stns: T.List[T.Dict], file_path: str):
                     )
                 f.write("\n")
             # This happens when we don't have any station headers and all -99s
+            except IndexError:
+                continue
+
+
+def write_data_to_csv(stns: T.List[T.Dict], file_path: str) -> None:
+    with open(file_path, "w") as f:
+        writer = csv.writer(f)
+        writer.writerow(CSV_HEADERS)
+        for stn in stns:
+            try:
+                writer.writerow(stn["headers"])
             except IndexError:
                 continue
