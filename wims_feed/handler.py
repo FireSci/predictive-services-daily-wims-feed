@@ -79,7 +79,7 @@ async def worker(event, context):
                 f.write(f"{stn}\n")
         with open(f"/tmp/{error_path}", "rb") as f:
             msg = sync_to_s3(f, settings.bucket_name, error_path)
-            msg["num_stns"] = len(error_stns)
+            msg["error_stns"] = error_stns
             email_body["error_file"] = msg
 
         logger.info(f"{error_path} was successfully synced!")
@@ -88,8 +88,6 @@ async def worker(event, context):
     send_email(email_body)
 
     logger.info("Pipeline complete! Check S3 for details.")
-
-    return
 
 
 def run(event, context):

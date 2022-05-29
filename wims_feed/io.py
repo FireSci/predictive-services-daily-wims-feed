@@ -74,20 +74,20 @@ def send_email(email_body: T.Dict[str, T.Dict[str, str]]) -> None:
             <h2>Daily WIMS Ingest Pipeline Notification</h2>
             <h3>Forecast File:</h3>
             <p>
-            STATUS: {email_body['fcst_file']['status']}</br>
-            STATUS MESSAGE: {email_body['fcst_file']['desc']} </br>
-            STATIONS PROCESSED: {str(email_body['fcst_file']['num_stns'])}</br>
-            OUTPUT PATH: <a href='https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/ndfd_predserv_fcst.txt' target='_blank'>https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/ndfd_predserv_fcst.txt</a>
+            <b>STATUS:</b> {email_body['fcst_file']['status']}<br>
+            <b>STATUS MESSAGE:</b> {email_body['fcst_file']['desc']}<br>
+            <b>STATIONS PROCESSED:</b> {str(email_body['fcst_file']['num_stns'])}<br>
+            <b>OUTPUT PATH:</b> <a href='https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/ndfd_predserv_fcst.txt' target='_blank'>https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/ndfd_predserv_fcst.txt</a>
             </p>
     """
     if email_body.get("error_file"):
         HTML_EMAIL_CONTENT_ERROR = f"""
             <h3>Errors File:</h3>
             <p>
-            STATUS: {email_body['error_file']['status']}</br>
-            STATUS MESSAGE: {email_body['error_file']['desc']} </br>
-            NUM OF ERROR STATIONS: {str(email_body['error_file']['num_stns'])}</br>
-            OUTPUT PATH: <a href='https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/error_stns.txt' target='_blank'>https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/error_stns.txt</a>
+            <b>STATUS:</b> {email_body['error_file']['status']}<br>
+            <b>STATUS MESSAGE:</b> {email_body['error_file']['desc']} <br>
+            <b>ERROR STATIONS:</b> {', '.join(str(stn) for stn in email_body['error_file']['error_stns'])}<br>
+            <b>OUTPUT PATH:</b> <a href='https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/error_stns.txt' target='_blank'>https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/error_stns.txt</a>
             </p>
         """
         HTML_EMAIL_CONTENT += HTML_EMAIL_CONTENT_ERROR
