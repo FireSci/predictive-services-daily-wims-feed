@@ -1,6 +1,7 @@
 import asyncio
 import json
 import typing as T
+from datetime import datetime
 
 import aiohttp
 import boto3
@@ -62,3 +63,49 @@ def sync_to_s3(file_path: str, bucket: str, out_path: str) -> T.Dict[str, str]:
         }
 
     return msg
+
+
+def send_email(email_body: T.Dict[str, T.Dict[str, str]]) -> None:
+    SES = boto3.client("ses", region_name="us-west-2")
+    CHARSET = "UTF-8"
+    HTML_EMAIL_CONTENT = f"""
+        <html>
+            <head></head>
+            <h2>Daily WIMS Ingest Pipeline Notification</h2>
+            <h3>Forecast File:</h3>
+            <p>
+            STATUS: {email_body['fcst_file']['status']}</br>
+            STATUS MESSAGE: {email_body['fcst_file']['desc']} </br>
+            STATIONS PROCESSED: {str(email_body['fcst_file']['num_stns'])}</br>
+            OUTPUT PATH: <a href='https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/ndfd_predserv_fcst.txt' target='_blank'>https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/ndfd_predserv_fcst.txt</a>
+            </p>
+    """
+    if email_body.get("error_file"):
+        HTML_EMAIL_CONTENT_ERROR = f"""
+            <h3>Errors File:</h3>
+            <p>
+            STATUS: {email_body['error_file']['status']}</br>
+            STATUS MESSAGE: {email_body['error_file']['desc']} </br>
+            NUM OF ERROR STATIONS: {str(email_body['error_file']['num_stns'])}</br>
+            OUTPUT PATH: <a href='https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/error_stns.txt' target='_blank'>https://predictive-services-open-data-us-west-2.s3.us-west-2.amazonaws.com/error_stns.txt</a>
+            </p>
+        """
+        HTML_EMAIL_CONTENT += HTML_EMAIL_CONTENT_ERROR
+    HTML_EMAIL_CONTENT += "</body></html>"
+
+    response = SES.send_email(
+        Destination={"ToAddresses": settings.notification_list},
+        Message={
+            "Body": {
+                "Html": {
+                    "Charset": CHARSET,
+                    "Data": HTML_EMAIL_CONTENT,
+                }
+            },
+            "Subject": {
+                "Charset": CHARSET,
+                "Data": f"{datetime.utcnow().strftime('%Y%m%d')} WIMS Status",
+            },
+        },
+        Source="josh@firesci.io",
+    )

@@ -41,6 +41,12 @@ provider:
           Resource:
             - 'arn:aws:s3:::predictive-services-open-data-us-west-2/*'
             - 'arn:aws:s3:::predictive-services-open-data-us-west-2'
+        - Effect: 'Allow'
+          Action:
+            - 'ses:SendEmail'
+            - 'ses:SendRawEmail'
+          Resource:
+            - '*'
 
 functions:
   cronHandler:
