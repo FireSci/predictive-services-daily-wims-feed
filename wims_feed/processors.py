@@ -262,6 +262,7 @@ def write_data_to_file(stns: T.List[T.Dict], file_path: str):
                         + "\n"
                     )
                 f.write("\n")
+
             # This happens when we don't have any station headers and all -99s
             except IndexError:
                 continue
