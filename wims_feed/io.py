@@ -66,6 +66,8 @@ def sync_to_s3(file_path: str, bucket: str, out_path: str) -> T.Dict[str, str]:
 
 
 def send_email(email_body: T.Dict[str, T.Dict[str, str]]) -> None:
+    """Send email report on pipeline status"""
+
     SES = boto3.client("ses", region_name="us-west-2")
     CHARSET = "UTF-8"
     HTML_EMAIL_CONTENT = f"""

@@ -9,5 +9,5 @@ class Settings(BaseSettings):
     bucket_name: str = "predictive-services-open-data-us-west-2"
     # could make this env var if any semi-private emails need to be added
     notification_list: list = [
-        "jclark754@gmail.com",
+        "josh@firesci.io",
     ]

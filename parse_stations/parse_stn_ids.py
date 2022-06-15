@@ -6,20 +6,17 @@ import json
 
 import pandas as pd
 
-# Drop GACC and PSA columns
+# Read csv, drop unnecessary columns
 df = pd.read_csv("PS_NATIONAL_FINAL_20220524.csv").drop(
     ["station_name", "psa_name", "psa_code", "gaccid"], axis=1
 )
 
-# # Get only the unique values from all remaining columns. Ravel tells pandas to
-# # flatten the columns into one series
+# Drop duplicates
 df = df.drop_duplicates(subset=["station_id", "rs"])
-
-# # Remove nan if it gets picked up from file, convert to ints to remove trailing
-# # zeroes, then to string for easier use later in JSON
-# df = df[~pd.isnull(df)].astype(int).astype(str)
 
 # Dump to JSON, sorted for fun
 with open("../station_list.json", "w") as outfile:
     json.dump(df.to_dict("records"), outfile)
+
+# 641 stns as of 6/2022
 print(f"{len(df)} stations written to json")
