@@ -1,10 +1,10 @@
 # Predictive Services Daily WIMS Feed
----
+Data feed for National [Predictive Services](https://www.predictiveservices.nifc.gov/) program.
+
 Cron lambda deployed to AWS US-West-2 via Serverless used to process and upload
 daily WIMS output to the web.
 
 ## Setup
----
 Before getting started in the code, we'll need to set up a few dependencies.
 
 ### Git and Github
@@ -59,10 +59,9 @@ pytest
 ```
 
 ## Making code changes
----
+work in progress
 
 ## Deploying
----
 Assuming we've configured everything correctly for AWS/Serverless, it's as simple
 as:
 
