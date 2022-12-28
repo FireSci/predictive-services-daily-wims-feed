@@ -1,13 +1,30 @@
-from pydantic import BaseSettings
+import typing as T
 
 
-class Settings(BaseSettings):
-    """Variables and settings for the entire pipeline"""
+class Config:
+    """Pipeline configuration info"""
 
-    station_path: str = "station_list.json"
-    output_path: str = "ndfd_predserv_fcst.txt"
-    bucket_name: str = "predictive-services-open-data-us-west-2"
+    BASE_URL: str = "https://famprod.nwcg.gov/wims/xsql"
+    STATION_PATH: str = "station_list.json"
+    OUTPUT_PATH: str = "ndfd_predserv_fcst.txt"
+    BUCKET_NAME: str = "predictive-services-open-data-us-west-2"
     # could make this env var if any semi-private emails need to be added
-    notification_list: list = [
+    NOTIFICATION_LIST: T.List[str] = [
         "josh@firesci.io",
     ]
+    # Left most column labels for output file
+    STN_LABELS = {
+        "Fcst Dy": [
+            "Max RH (%)",
+            "Min Temp (F)",
+            "Min RH (%)",
+            "Max Temp (F)",
+            "WSpd (knt)",
+            "BI",
+            "ERC",
+            "IC",
+            "10-hr fuel (%)",
+            "100-hr fuel (%)",
+            "1000-hr fuel (%)",
+        ]
+    }

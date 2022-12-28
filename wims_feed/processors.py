@@ -2,11 +2,8 @@ import typing as T
 from copy import deepcopy
 from datetime import date, datetime, timedelta
 
-from wims_feed.constants import STN_LABELS
 from wims_feed.helpers import enumerate_dates, rnd_wims, wims_to_list
-from wims_feed.settings import Settings
-
-settings = Settings()
+from wims_feed.settings import Config
 
 
 def remove_extra_nfdrs(stn_data: T.Dict[str, T.Dict]) -> T.Dict:
@@ -257,7 +254,7 @@ def write_data_to_file(stns: T.List[T.Dict], file_path: str):
                 for i in range(11):
                     row_vals = [stn[dt][i] for dt in sorted_dts]
                     f.write(
-                        f"{STN_LABELS['Fcst Dy'][i]:<22}"
+                        f"{Config.STN_LABELS['Fcst Dy'][i]:<22}"
                         + "".join(f"{x:<9}" for x in row_vals)
                         + "\n"
                     )

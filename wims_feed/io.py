@@ -2,14 +2,13 @@ import asyncio
 import json
 import typing as T
 from datetime import datetime
+from io import BufferedReader
 
 import aiohttp
 import boto3
 import xmltodict
 
-from wims_feed.settings import Settings
-
-settings = Settings()
+from wims_feed.settings import Config
 
 
 def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
@@ -47,7 +46,9 @@ async def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
     return stn_data
 
 
-def sync_to_s3(file_path: str, bucket: str, out_path: str) -> T.Dict[str, str]:
+def sync_to_s3(
+    file_path: BufferedReader, bucket: str, out_path: str
+) -> T.Dict[str, T.Any]:
     """Upload final txt file to S3 and provide a helpful msg about sync status"""
     try:
         S3 = boto3.client("s3")
@@ -96,7 +97,7 @@ def send_email(email_body: T.Dict[str, T.Dict[str, str]]) -> None:
     HTML_EMAIL_CONTENT += "</body></html>"
 
     response = SES.send_email(
-        Destination={"ToAddresses": settings.notification_list},
+        Destination={"ToAddresses": Config.NOTIFICATION_LIST},
         Message={
             "Body": {
                 "Html": {
