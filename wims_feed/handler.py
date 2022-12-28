@@ -21,6 +21,11 @@ loop = asyncio.get_event_loop()
 async def worker(event: T.Dict, context: T.Dict):
     """Main worker"""
 
+    # Dry run
+    dry_run = event.get("dry_run", False)
+    if dry_run:
+        logger.info(f"NOTE: This is a dry run and will not be synced to S3")
+
     # Get list of stns from local
     stns: T.List[T.Dict[str, T.Any]] = get_station_list(Config.STATION_PATH)
 
@@ -46,7 +51,7 @@ async def worker(event: T.Dict, context: T.Dict):
         final_data.append(processed_data)
 
     # Only write to file/upload if not dry run
-    if event.get("dry_run", False):
+    if not dry_run:
         # Write data to file
         logger.info(f"Processing complete!. Writing data to file...")
         write_data_to_file(final_data, f"/tmp/{Config.OUTPUT_PATH}")

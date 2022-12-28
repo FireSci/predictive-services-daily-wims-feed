@@ -1,5 +1,18 @@
 {
+  "name": "predictive-services-daily-wims-feed",
+  "version": "1.0.0",
+  "description": "Data feed for National Predictive Services program",
+  "author": "Joshua Clark",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "setup": "poetry install",
+    "local": "export AWS_PROFILE=management-admin && export AWS_SDK_LOAD_CONFIG=1 && serverless invoke local --function cronHandler --data '{\"dry_run\": \"True\"}'",
+    "deploy": "serverless deploy"
+  },
   "devDependencies": {
+    "serverless": "^3.24.1",
+    "serverless-better-credentials": "^1.1.3",
     "serverless-python-requirements": "^5.4.0"
   }
 }
