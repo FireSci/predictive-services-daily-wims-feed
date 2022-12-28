@@ -2,7 +2,12 @@ import typing as T
 from copy import deepcopy
 from datetime import date, datetime, timedelta
 
-from wims_feed.helpers import enumerate_dates, rnd_wims, wims_to_list
+from wims_feed.helpers import (
+    enumerate_dates,
+    rnd_wims,
+    wims_str_to_date,
+    wims_to_list,
+)
 from wims_feed.settings import Config
 
 
@@ -45,9 +50,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
         (datetime.utcnow() + timedelta(days=9)).date(),
     )
     # This will be our final station object
-    out_stn: T.Dict[str, T.List[T.Any]] = {
-        d.strftime("%m/%d"): [] for d in dates
-    }
+    out_stn: T.Dict[T.Union[date, str], T.List[T.Any]] = {d: [] for d in dates}
 
     # Make sure data from endpoints are list, not dict. Happens when endpoint
     # response has only *one* ob/fcst
@@ -62,7 +65,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
 
     # Check and fill missing dates with -99
     if len(pfcst) != 9:
-        missing_dts: T.List[str] = find_missing_dates(pfcst, "pfcst")
+        missing_dts: T.List[date] = find_missing_dates(pfcst, "pfcst")
         for d in missing_dts:
             out_stn[d].extend(
                 [
@@ -76,7 +79,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
 
     # Fill found dates
     for day in pfcst:
-        out_stn[day["fcst_dt"][:-5]].extend(
+        out_stn[wims_str_to_date(day["fcst_dt"])].extend(
             [
                 day.get("rh_max", "-99"),
                 day.get("temp_min", "-99"),
@@ -107,7 +110,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
 
     # Fill found dates
     for day in obs:
-        out_stn[day["obs_dt"][:-5]].extend(
+        out_stn[wims_str_to_date(day["obs_dt"])].extend(
             [
                 day.get("rh_max", "-99"),
                 day.get("temp_min", "-99"),
@@ -130,7 +133,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
 
     # Fill found dates
     for day in nfdrs_obs:
-        out_stn[day["nfdr_dt"][:-5]].extend(
+        out_stn[wims_str_to_date(day["nfdr_dt"])].extend(
             [
                 rnd_wims(day.get("bi", "-99")),
                 rnd_wims(day.get("ec", "-99")),
@@ -153,7 +156,7 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
             out_stn[d].extend(["-99", "-99", "-99", "-99", "-99", "-99"])
 
     for day in nfdrs_fcst:
-        out_stn[day["nfdr_dt"][:-5]].extend(
+        out_stn[wims_str_to_date(day["nfdr_dt"])].extend(
             [
                 rnd_wims(day.get("bi", "-99")),
                 rnd_wims(day.get("ec", "-99")),
@@ -163,7 +166,6 @@ def process_data(stn_data: T.Dict[str, T.Dict], stn: T.Dict) -> T.Dict:
                 rnd_wims(day.get("th_hr", "-99")),
             ]
         )
-
     # Write station headers (stn name, stn id, etc.)
     out_stn["headers"] = get_stn_headers(stn_data)
 
@@ -193,7 +195,7 @@ def get_stn_headers(stn_data) -> T.List[str]:
     return headers
 
 
-def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
+def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[date]:
     """Find the missing dates in the WIMS output. This will always be called on
     forecast wx and nfdrs endpoints since we only request 7 days of data but
     legacy ingest requires 9 forecast days. This will help us fill those last
@@ -204,16 +206,16 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
     # different than the data. ~~GrAnDpA WiMs PrObz~~
     if d_type in ["nfdrs", "pfcst"]:
         dates = enumerate_dates(
-            (datetime.utcnow() + timedelta(days=1)),
-            (datetime.utcnow() + timedelta(days=9)),
+            (datetime.utcnow() + timedelta(days=1)).date(),
+            (datetime.utcnow() + timedelta(days=9)).date(),
         )
     else:
         dates = enumerate_dates(
-            (datetime.utcnow() - timedelta(days=1)),
-            (datetime.utcnow()),
+            (datetime.utcnow() - timedelta(days=1)).date(),
+            (datetime.utcnow()).date(),
         )
     # Format to be like WIMS output
-    date_strs = set([d.strftime("%m/%d") for d in dates])
+    date_strs: T.Set[date] = set([d for d in dates])
 
     # Figure out which date key we need
     if d_type in ["nfdrs", "nfdrs_obs"]:
@@ -224,7 +226,9 @@ def find_missing_dates(data: T.List[T.Dict], d_type: str) -> T.List[str]:
         data_date = "fcst_dt"
 
     # Get the dates from WIMS output
-    wims_dates = set([day[data_date][:-5] for day in data])
+    wims_dates = set(
+        [datetime.strptime(day[data_date], "%m/%d/%Y").date() for day in data]
+    )
 
     # Get the set difference (dates that are missing from WIMS)
     return list(date_strs.difference(wims_dates))
@@ -242,10 +246,10 @@ def write_data_to_file(stns: T.List[T.Dict], file_path: str):
                 del stn["headers"]
 
                 # Write date row
-                sorted_dts = sorted(stn.keys())
+                sorted_dts: T.List[date] = sorted(stn.keys())
                 f.write(
                     f"{'Fcst Dy':<20}"
-                    + "".join(f"{x:<9}" for x in sorted_dts)
+                    + "".join(f"{x.strftime('%m/%d'):<9}" for x in sorted_dts)
                     + "\n"
                 )
 

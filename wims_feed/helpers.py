@@ -51,6 +51,7 @@ def enumerate_dates(s: date, e: date) -> T.List[date]:
     while s <= e:
         dates.append(s)
         s += timedelta(days=1)
+        s = date(s.year, s.month, s.day)
     return dates
 
 
@@ -74,3 +75,8 @@ def wims_to_list(
 def rnd_wims(val: str) -> str:
     "Helper to round nfdrs values for matching legacy WIMS output."
     return str(round(float(val)))
+
+
+def wims_str_to_date(val: str) -> date:
+    """Helper to convert strings to date objects"""
+    return datetime.strptime(val, "%m/%d/%Y").date()
