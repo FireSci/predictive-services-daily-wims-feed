@@ -7,7 +7,7 @@ import json
 import pandas as pd
 
 # Read csv, drop unnecessary columns
-df = pd.read_csv("PS_NATIONAL_FINAL_20220524.csv").drop(
+df = pd.read_csv("PS_NATIONAL_FINAL_20230119.csv").drop(
     ["station_name", "psa_name", "psa_code", "gaccid"], axis=1
 )
 

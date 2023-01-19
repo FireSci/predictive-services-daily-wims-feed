@@ -1,0 +1,228 @@
+﻿station_name,station_id,psa_name,psa_code,gaccid,RS
+Cedar Texas,418701,TX  Pan N,SA01,9,13
+Dalhart Municipal Airport,418702,TX  Pan N,SA01,9,12
+Bootleg Texas,418801,TX  Pan N,SA01,9,13
+Amarillo International Airport,418803,TX  Pan N,SA01,9,12
+Caprock,418901,TX  Pan N,SA01,9,13
+Woodward,341541,OK West,SA02,9,13
+Lahoma,341640,OK West,SA02,9,13
+Watonga,342540,OK West,SA02,9,13
+Cheyenne Oklahoma,343301,OK West,SA02,9,12
+Wichita Oklahoma,345801,OK West,SA02,9,13
+Red Rock,341840,OK Cent,SA03,9,13
+Guthrie,342640,OK Cent,SA03,9,13
+Chickasha,344540,OK Cent,SA03,9,13
+Pauls Valley,345940,OK Cent,SA03,9,13
+Ringling,347240,OK Cent,SA03,9,13
+Bootleg Texas,418801,TX  Pan S,SA04,9,13
+Caprock,418901,TX  Pan S,SA04,9,13
+Matador W.M.A. Texas,418902,TX  Pan S,SA04,9,13
+Lubbock International Airport,419002,TX  Pan S,SA04,9,12
+Caprock,418901,TX  Cent NW,SA05,9,13
+Matador W.M.A. Texas,418902,TX  Cent NW,SA05,9,13
+Miller Creek Texas,419301,TX  Cent NW,SA05,9,13
+Hamby Texas,419401,TX  Cent NW,SA05,9,13
+Possum Kingdon_SP,419402,TX  Cent NE,SA06,9,13
+LBJ Rd Texas,419601,TX  Cent NE,SA06,9,13
+Cedar Hill SP Texas,419701,TX  Cent NE,SA06,9,13
+Granbury Texas,419702,TX  Cent NE,SA06,9,13
+Caddo Texas,410202,TX  East N,SA07,9,13
+Clarksville Texas,410401,TX  East N,SA07,9,13
+Gilmer Texas,411401,TX  East N,SA07,9,13
+Athens Texas,412101,TX  East N,SA07,9,13
+Greenville Texas,419602,TX  East N,SA07,9,13
+Pinery Texas,417101,TX  Mountains,SA08,9,12
+Fort Davis Texas,417201,TX  Mountains,SA08,9,13
+Chisos Basin Texas,417403,TX  Mountains,SA08,9,12
+Pecos County Airport,417601,TX  West,SA09,9,13
+Barnhart Texas,417701,TX  West,SA09,9,13
+Midland Texas,419202,TX  West,SA09,9,13
+Barnhart Texas,417701,TX  Cent SW,SA10,9,13
+Kickapoo Caverns SP Texas,418001,TX  Cent SW,SA10,9,13
+Paint Creek,419203,TX  Cent SW,SA10,9,13
+Comanche Texas,419403,TX  Cent SW,SA10,9,13
+Coleman Texas,419502,TX  Cent SW,SA10,9,13
+Bastrop Texas,415501,TX  Cent SE,SA11,9,13
+Attwater NWR Texas,416601,TX  Cent SE,SA11,9,13
+Guadalupe River SP Texas,418101,TX  Cent SE,SA11,9,13
+Colorado Bend Texas,419501,TX  Cent SE,SA11,9,13
+McGregor Texas,419802,TX  Cent SE,SA11,9,13
+Round Prairie Texas,413101,TX  East S,SA12,9,13
+Sabine South Texas,413701,TX  East S,SA12,9,13
+Conroe Texas,415109,TX  East S,SA12,9,13
+Southern Rough Texas,416101,TX  East S,SA12,9,13
+Attwater NWR Texas,416601,TX  East S,SA12,9,13
+Dayton Texas,415201,TX  NE Coast,SA13,9,13
+Anahuac NWR Texas,416099,TX  NE Coast,SA13,9,13
+Southern Rough Texas,416601,TX  NE Coast,SA13,9,13
+Brazoria NWR Texas,418301,TX  NE Coast,SA13,9,13
+McFadden Texas,419901,TX  NE Coast,SA13,9,13
+Kickapoo Caverns SP Texas,418001,TX Rio Grande Plains N,SA14,9,13
+Guadalupe River SP Texas,418101,TX Rio Grande Plains N,SA14,9,13
+Pearsall Texas,418102,TX Rio Grande Plains N,SA14,9,13
+George West Texas,418201,TX Rio Grande Plains N,SA14,9,13
+Victoria Texas,418202,TX  South Coast,SA15,9,13
+Aransas Texas,418502,TX  South Coast,SA15,9,13
+Laguna Atascosa Texas,418603,TX  South Coast,SA15,9,13
+Santa Ana NWR Texas,418602,TX Rio Grande Plains S,SA16,9,13
+Falcon Lake Texas,418604,TX Rio Grande Plains S,SA16,9,13
+Linn-San Manuel Texas,418605,TX Rio Grande Plains S,SA16,9,13
+Vinita,341240,OK East,SA17A,9,13
+Inola,342040,OK East,SA17A,9,13
+Sallisaw,344140,OK East,SA17A,9,13
+Kiamichi Oklahoma,346303,OK East,SA17A,9,12
+Broken Bow Oklahoma,347701,OK East,SA17A,9,13
+Silver Hill Arkansas,31201,AR West,SA17B,9,13
+Blanchard Springs Arkansas,31404,AR West,SA17B,9,13
+Devils Knob Arkansas,32001,AR West,SA17B,9,13
+Booneville Arkansas,33001,AR West,SA17B,9,13
+Guy Arkansas,33202,AR West,SA17B,9,13
+Evening Shade Arkansas,31502,AR East,SA18,9,13
+Sheridan Arkansas,35102,AR East,SA18,9,13
+Bluff City Arkansas,36502,AR East,SA18,9,13
+UAM Arkansas,36901,AR East,SA18,9,13
+Caney - FTS Louisiana,160401,LA W,SA19,9,12
+Kisatchie - FTS Louisiana,161803,LA W,SA19,9,12
+Gum Springs Louisiana,161902,LA W,SA19,9,12
+Vernon Louisiana,162302,LA W,SA19,9,12
+Catahoula - FTS Louisiana,162502,LA W,SA19,9,12
+Sabine Louisiana,165102,LA Coast Center & West,SA20,9,12
+Lacassine Louisiana,165103,LA Coast Center & West,SA20,9,12
+Kirbyville Texas,414501,LA Coast Center & West,SA20,9,13
+Big Branch NWR Louisiana,165002,LA Coast Southeast Toe,SA21A,9,13
+Hancock Mississippi,228002,LA Coast Southeast Toe,SA21A,9,13
+Sandhill Crane Mississippi,228202,LA Coast Southeast Toe,SA21A,9,12
+Big Branch NWR Louisiana,165002,MS  Coast,SA21B,9,13
+Hancock Mississippi,228002,MS  Coast,SA21B,9,13
+Sandhill Crane Mississippi,228202,MS  Coast,SA21B,9,12
+Grand Bay Mississippi,228204,MS  Coast,SA21B,9,12
+Bon Secour Alabama,16703,AL Coast,SA21C,9,13
+Greene Mississippi,227601,AL Coast,SA21C,9,13
+Grand Bay Mississippi,228204,AL Coast,SA21C,9,12
+Holmes Mississippi,223501,MS  Cent & South,SA22A,9,13
+Neshoba Mississippi,224601,MS  Cent & South,SA22A,9,13
+Lauderdale Mississippi,225301,MS  Cent & South,SA22A,9,13
+Pike Mississippi,227001,MS  Cent & South,SA22A,9,13
+Greene Mississippi,227601,MS  Cent & South,SA22A,9,13
+Big Branch NWR Louisiana,165002,LA E,SA22B,9,13
+Pike Mississippi,227001,LA E,SA22B,9,13
+Marion Mississippi,227202,LA E,SA22B,9,13
+Winborn Mississippi,220202,MS  North,SA23,9,13
+Tishomingo Mississippi,220601,MS  North,SA23,9,13
+Yallabusha Mississippi,222101,MS  North,SA23,9,13
+Monroe Mississippi,222401,MS  North,SA23,9,13
+Kylbl Kentucky,159901,TN W,SA24,9,12
+Camden Tower Tennessee,404001,TN W,SA24,9,13
+Chickasaw SF Tennessee,408001,TN W,SA24,9,13
+Shiloh NMP Tennessee,408302,TN W,SA24,9,13
+Big South Tennessee,400902,TN Cent,SA25,9,12
+Burns Tennessee,402102,TN Cent,SA25,9,13
+Lewisburg Tower Tennessee,406601,TN Cent,SA25,9,13
+Bledsoe SF Tennessee,407102,TN Cent,SA25,9,13
+Prentice Cooper SF Tennessee,409201,TN Cent,SA25,9,13
+Hamblen Co HQ Tennessee,403301,TN Mountains,SA25B,9,13
+Watauga Tennessee,403604,TN Mountains,SA25B,9,13
+Lenoir City Tennessee,405101,TN Mountains,SA25B,9,13
+Crittenden Kentucky,150703,KY West,SA26,9,12
+Greenville Kentucky,151191,KY West,SA26,9,12
+Houchin Meadow Kentucky,156502,KY West,SA26,9,13
+Kylbl Kentucky,159901,KY West,SA26,9,12
+Triangle Mtn Kentucky,152001,KY Mountains,SA27,9,13
+Koomer Kentucky,154401,KY Mountains,SA27,9,13
+Big Sandy Kentucky,154801,KY Mountains,SA27,9,12
+Somerset Kentucky,157002,KY Mountains,SA27,9,13
+Yellow Creek Kentucky,159801,VA SW Mountains,SA28A,9,13
+Stony Fork Virginia,447502,VA SW Mountains,SA28A,9,13
+Flatwoods,448502,VA SW Mountains,SA28A,9,13
+Fort Valley Virginia,440402,VA West Mountains,SA28B,9,13
+Lime Kiln Virginia,441801,VA West Mountains,SA28B,9,13
+Sawmill Ridge Virginia,441906,VA West Mountains,SA28B,9,13
+Craig Valley Virginia,444002,VA West Mountains,SA28B,9,13
+Stony Fork Virginia,447502,VA West Mountains,SA28B,9,12
+Antietam NB,180303,VA Cent,SA29,9,13
+Raven Knob North Carolina,310301,VA Cent,SA29,9,13
+Caswell Game Lands N. Carolina,310801,VA Cent,SA29,9,13
+Sawmill Ridge Virginia,441906,VA Cent,SA29,9,13
+James River Virginia,446801,VA Cent,SA29,9,12
+Cedarville,181510,VA Coast,SA30,9,13
+James River Virginia,446801,VA Coast,SA30,9,12
+Great Dismal NWR Virginia,449801,VA Coast,SA30,9,12
+Back Bay Virginia,449905,VA Coast,SA30,9,12
+Rendezvous Mtn North Carolina,312001,NC Mountains,SA31A,9,13
+7 Mile Ridge North Carolina,313302,NC Mountains,SA31A,9,13
+Tusquitee North Carolina,315602,NC Mountains,SA31A,9,13
+Highlands North Carolina,315803,NC Mountains,SA31A,9,13
+Cohutta #1 Georgia,90402,GA  Mountains,SA31B,9,13
+Toccoa #1 Georgia,90601,GA  Mountains,SA31B,9,13
+Brasstown #1 Georgia,90701,GA  Mountains,SA31B,9,13
+Camp Merrill Georgia,91201,GA  Mountains,SA31B,9,13
+Chattooga #1 Georgia,91301,GA  Mountains,SA31B,9,13
+Tallulah #1 Georgia,90802,SC Mountains,SA31C,9,13
+Andrew Pickens South Carolina,380102,SC Mountains,SA31C,9,13
+Raven Knob North Carolina,310301,NC Cent,SA32,9,13
+Caswell Game Lands N. Carolina,310801,NC Cent,SA32,9,13
+Duke Forest North Carolina,312501,NC Cent,SA32,9,13
+Lexington North Carolina,314602,NC Cent,SA32,9,13
+Rutherford County North Carolina,316302,NC Cent,SA32,9,13
+Finch's Station North Carolina,317501,NC Coastal Plain,SA33,9,13
+Fort Bragg North Carolina,318503,NC Coastal Plain,SA33,9,13
+Turnbull Creek North Carolina,319302,NC Coastal Plain,SA33,9,13
+Elizabeth City North Carolina,311503,NC Coast,SA34,9,13
+Pocosin Lakes North Carolina,315201,NC Coast,SA34,9,13
+Back Island North Carolina,319402,NC Coast,SA34,9,13
+Hofmann Forest North Carolina,319507,NC Coast,SA34,9,13
+Whiteville North Carolina,319701,NC Coast,SA34,9,13
+Kings Mountain South Carolina,380601,SC Cent,SA35,9,12
+Whitmire South Carolina,380902,SC Cent,SA35,9,13
+Carolina Sandhills S. Carolina,381201,SC Cent,SA35,9,13
+Savriv South Carolina,383101,SC Cent,SA35,9,13
+Whiteville North Carolina,319701,SC Coastal Plain,SA36,9,13
+Santee NWR South Carolina,383401,SC Coastal Plain,SA36,9,13
+Savraw South Carolina,383701,SC Coastal Plain,SA36,9,13
+Witherbee South Carolina,384002,SC Coast,SA37,9,13
+Ace Basin South Carolina,384101,SC Coast,SA37,9,13
+Savannah NWR South Carolina,384201,SC Coast,SA37,9,13
+Bankhead Alabama,10702,AL North,SA38,9,13
+Shoal Creek Alabama,12201,AL North,SA38,9,13
+Talladega Alabama,12701,AL North,SA38,9,13
+Oakmulgee Alabama,13201,AL South,SA39,9,13
+Tuskegee Alabama,14201,AL South,SA39,9,13
+Open Pond - FTS Alabama,15902,AL South,SA39,9,13
+Lauderdale Mississippi,225301,AL South,SA39,9,13
+Chatsworth Georgia,90401,GA  North,SA40,9,13
+Dawsonville Georgia,91101,GA  North,SA40,9,13
+Dallas Georgia,92201,GA  North,SA40,9,13
+Newnan Georgia,92901,GA  North,SA40,9,13
+Oconee #1 Georgia,93701,GA  Cent,SA41,9,13
+Louisville Georgia,94501,GA  Cent,SA41,9,13
+Plains/Sumter Georgia,95501,GA  Cent,SA41,9,13
+Byromville Georgia,95701,GA  Cent,SA41,9,13
+McRae Georgia,96201,GA  South,SA42,9,13
+Metter Georgia,96301,GA  South,SA42,9,13
+Camilla Georgia,98201,GA  South,SA42,9,13
+Adel Georgia,98401,GA  South,SA42,9,13
+Waycross Georgia,99701,GA  South,SA42,9,13
+Midway Georgia,96801,GA  Coast,SA46,9,13
+Sterling Georgia,98801,GA  Coast,SA46,9,13
+Stafford-CUIS Georgia,99902,GA  Coast,SA46,9,13
+Savannah NWR South Carolina,384201,GA  Coast,SA46,9,13
+Open Pond - FTS Alabama,15902,FL Northwest,SA47,9,13
+Bloxham Florida,80802,FL Northwest,SA47,9,13
+Sanborn Florida,82001,FL Northwest,SA47,9,13
+Sumatra Florida,82002,FL Northwest,SA47,9,13
+Sanborn Florida,82201,FL Northwest,SA47,9,13
+Olustee Florida,81301,FL Northeast,SA48,9,13
+Eddy Tower Florida,81302,FL Northeast,SA48,9,13
+Lower Suwannee Florida,83001,FL Northeast,SA48,9,13
+Lake George Florida,83502,FL Northeast,SA48,9,13
+Lake Wales Florida,84802,FL Central,SA49,9,13
+Central Florida,83501,FL Central,SA49,9,13
+Lake George Florida,83502,FL Central,SA49,9,13
+Merritt Island Florida,84402,FL Central,SA49,9,13
+Lake Wales Florida,84802,FL South,SA50,9,13
+Brighton Florida,85801,FL South,SA50,9,13
+Loxahatchee Florida,86001,FL South,SA50,9,13
+Panther East Florida,86405,FL South,SA50,9,13
+Chekika Florida,86704,FL South,SA50,9,13
+Guanica,512901,PR,SA52,9,13
+Camp Santiago,516301,PR,SA52,9,13

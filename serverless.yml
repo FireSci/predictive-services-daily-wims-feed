@@ -24,12 +24,12 @@ package:
 provider:
   name: aws
   region: us-west-2
-  stage: v1
-  profile: management-admin
+  stage: dev
+  profile: production
   runtime: python3.8
   timeout: 900 # 15 min
   deploymentBucket:
-    blockPublicAccess: true
+    name: firesci-sls-artifacts-production-us-west-2
     maxPreviousDeploymentArtifacts: 3
   iam:
     role:
