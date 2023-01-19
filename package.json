@@ -9,7 +9,7 @@
     "setup": "poetry install",
     "dry-run": "export AWS_PROFILE=production && export AWS_SDK_LOAD_CONFIG=1 && serverless invoke local --function cronHandler --data '{\"dry_run\": \"True\"}'",
     "local-sync": "export AWS_PROFILE=production && export AWS_SDK_LOAD_CONFIG=1 && serverless invoke local --function cronHandler",
-    "deploy": "serverless deploy"
+    "deploy": "export AWS_SDK_LOAD_CONFIG=1 && serverless deploy"
   },
   "devDependencies": {
     "serverless": "^3.24.1",
