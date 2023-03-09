@@ -10,6 +10,12 @@ import xmltodict
 
 from wims_feed.settings import Config
 
+HEADERS = {
+    "Referer": "NIFC Predictive Services <josh@firesci.io>",
+    "Connection": "keep-alive",
+    "Cache-Control": "max-age=0",
+}
+
 
 def get_station_list(file_path: str) -> T.List[T.Dict[str, T.Any]]:
     """Loads json stn data in memory from top-level dir"""
@@ -31,7 +37,7 @@ async def get_station_data(urls: T.List[str]) -> T.Dict[str, T.Dict]:
     stn_data: T.Dict = {}
 
     # Async obtain a 'batch' of stn data representing all four WIMS responses
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(headers=HEADERS) as session:
         url_resps: T.List[T.Dict] = await asyncio.gather(
             *[get_wims_data(url, session) for url in urls]
         )

@@ -35,10 +35,10 @@ async def worker(event: T.Dict, context: T.Dict):
     for stn in stns:
         # Build request urls
         urls = build_urls(stn)
+        # logger.info(f"{stn['station_id']} being processed with URLS: {urls}")
 
         # Make requests to WIMS endpoints
         raw_data = await get_station_data(urls)
-
         # Process only the data we need
         processed_data = process_data(raw_data, stn)
         # This occurs when no data is returned from any wims endpoint

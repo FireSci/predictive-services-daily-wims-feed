@@ -664,11 +664,11 @@ Cimarron,148601,SE Colorado/W Kansas,RM27,7,13
 Stafford,146501,Central-E Kansas,RM28,7,12
 Kirwin,140401,Central-E Kansas,RM28,7,12
 Potowatomi,142301,Central-E Kansas,RM28,7,12
-Cedar Texas,418701,TX  Pan N,SA01,9,13
+Cedar Texas,418701,TX Pan N,SA01,9,13
 Dalhart Municipal Airport,418702,TX  Pan N,SA01,9,12
-Bootleg Texas,418801,TX  Pan N,SA01,9,13
+Bootleg Texas,418801,TX Pan N,SA01,9,13
 Amarillo International Airport,418803,TX  Pan N,SA01,9,12
-Caprock,418901,TX  Pan N,SA01,9,13
+Caprock,418901,TX Pan N,SA01,9,13
 Woodward,341541,OK West,SA02,9,13
 Lahoma,341640,OK West,SA02,9,13
 Watonga,342540,OK West,SA02,9,13
@@ -754,10 +754,10 @@ Catahoula - FTS Louisiana,162502,LA W,SA19,9,12
 Sabine Louisiana,165102,LA Coast Center & West,SA20,9,12
 Lacassine Louisiana,165103,LA Coast Center & West,SA20,9,12
 Kirbyville Texas,414501,LA Coast Center & West,SA20,9,13
-Big Branch NWR Louisiana,165002,LA Coast Southeast Toe,SA21A,9,13
+Big Branch NWR Louisiana,168541,LA Coast Southeast Toe,SA21A,9,13
 Hancock Mississippi,228002,LA Coast Southeast Toe,SA21A,9,13
 Sandhill Crane Mississippi,228202,LA Coast Southeast Toe,SA21A,9,12
-Big Branch NWR Louisiana,165002,MS  Coast,SA21B,9,13
+Big Branch NWR Louisiana,168541,MS  Coast,SA21B,9,13
 Hancock Mississippi,228002,MS  Coast,SA21B,9,13
 Sandhill Crane Mississippi,228202,MS  Coast,SA21B,9,12
 Grand Bay Mississippi,228204,MS  Coast,SA21B,9,12
@@ -769,7 +769,7 @@ Neshoba Mississippi,224601,MS  Cent & South,SA22A,9,13
 Lauderdale Mississippi,225301,MS  Cent & South,SA22A,9,13
 Pike Mississippi,227001,MS  Cent & South,SA22A,9,13
 Greene Mississippi,227601,MS  Cent & South,SA22A,9,13
-Big Branch NWR Louisiana,165002,LA E,SA22B,9,13
+Big Branch NWR Louisiana,168541,LA E,SA22B,9,13
 Pike Mississippi,227001,LA E,SA22B,9,13
 Marion Mississippi,227202,LA E,SA22B,9,13
 Winborn Mississippi,220202,MS  North,SA23,9,13
